@@ -8,7 +8,7 @@ Repository for an Internship Project: Frontend of Kemrie Barcenas' Music Website
 ## Instructions for Usage
 --------------
 1. Install *TailwindCSS* via npm.
-  ` npm install -D tailwindcss `
+  ` npm install -D tailwindcss ` <br>
   Its documentation can be found here: https://tailwindcss.com/docs/installation
   
 2. To build, run ` npm run build `.
