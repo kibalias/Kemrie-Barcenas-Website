@@ -5,7 +5,7 @@ Repository for an Internship Project: Frontend of Kemrie Barcenas' Music Website
 1. **VueJS** <br>
 2. **TailwindCSS** <br>
 
-##Instructions for Usage
+## Instructions for Usage
 --------------
 1. Install *TailwindCSS* via npm.
   ` npm install -D tailwindcss `
