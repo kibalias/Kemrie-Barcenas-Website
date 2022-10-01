@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>KB - Blogs</title>
+</head>
+<body class="bg-violet">
+<!--NAVBAR-->
+    <div id="app">
+        <div class="flex items-center justify-between">
+
+            <nav class="md:mx-5 pr-5 pt-5 pb-5 bg-transparent w-full md:flex md:items-center md:justify-between">
+
+                <div class="flex justify-between items-center">
+
+                    <div class="z-20 block md:hidden"></div>
+
+                    <span class="ml-5 font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
+                        KB
+                    </span>
+                    <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                        <button @click="toggleShowSidebar">
+                            <iconify-icon icon="bx:menu" style="color: white;" width="40"></iconify-icon>
+                        </button>
+                    </span>
+                </div>
+
+                <div>
+                    <div class="hidden md:block">
+                        <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
+                                    w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+                            <li class="mx-5 mt-2 my-5 md:my-0 tracking-widest">
+                                <a href="../../index.html" class="
+                                inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">HOME</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="../songs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">SONGS</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="#" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">GALLERY</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="../blogs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">BLOGS</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="#" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Mobile Menu-->
+                <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
+                    <!--Links-->
+                    <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
+                        <li class="my-2">
+                            <a href="../../index.html" class="">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="../songs.html">Songs</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#">Gallery</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="../blogs.html">Blogs</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!--Close Button-->
+                    <button @click="toggleShowSidebar" class="p-5">
+                        <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    
+    <!--END OF NAVBAR-->
+
+    <!--Full Content-->
+    <div class="mt-5 w-full">
+        <div class="bg-white mx-5 md:mx-24 h-full px-7 py-5 md:px-36 md:py-12">
+
+            <!--Article-->
+            <div>
+                    <!--Title-->
+                <div class="title tracking-wide font-lato font-semibold text-3xl">
+                    This Year's Bop: Palms of Two Sinners is Out Now!
+                </div>
+                    <!--Date-->
+                <div class="date tracking-wide title font-lato text-gray-400 text-sm">{{date}}</div>
+                    <!--Main Media-->
+                <div class="main-media h-48 bg-blue-400 my-5">
+                    <img class="object-cover w-full h-48" src="../../images/kemrie-image.png">
+                </div>
+                    
+                    <!--Text/Media-->
+                <div class="text-media tracking-wide title font-lato text-gray-900 text-medium">
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie ante sit amet sapien luctus egestas. Sed porta magna nec libero facilisis, ac pretium felis varius. Etiam pretium quam a est ornare, eget auctor nisi mollis. Pellentesque sit amet pretium turpis. In eleifend orci ut magna aliquam semper. Proin lacinia posuere augue ut viverra. Donec quam dolor, viverra in porttitor non, ultrices et augue. Mauris bibendum aliquam ex. Ut placerat bibendum molestie. Fusce tortor felis, sagittis eu tincidunt et, lacinia et leo. <br><br>
+
+                    <div class="float-left md:mr-5 my-4">
+                        <img src="../../images/palms-of-two-sinners.jpg" class="md:h-80"></img src>
+                    </div>
+
+                    Maecenas varius, purus eget semper dapibus, est leo egestas velit, vel ultricies nisl nibh non justo. In bibendum, orci ut mattis blandit, tortor nibh interdum odio, id lobortis lorem urna iaculis erat. In sit amet tincidunt velit. Duis venenatis maximus erat id tristique. Duis urna metus, blandit vel ligula nec, faucibus accumsan neque. Aenean convallis ligula nec maximus mattis. Integer rutrum sapien id consectetur aliquet. <br><br>
+
+                    Cras vulputate, nibh vitae mollis condimentum, lorem magna ultricies tortor, et maximus orci nunc nec lorem. Suspendisse ultricies, massa in faucibus ultrices, neque ligula vulputate turpis, sed tincidunt dui nulla non turpis. Mauris in nunc vel nisl mattis feugiat. Nullam enim metus, elementum suscipit vulputate in, vehicula eu dolor. Quisque justo orci, convallis eu libero eu, molestie dictum enim. Nulla suscipit lacus quam, nec vestibulum libero ullamcorper fringilla. <br><br>
+
+                        
+                        <div class="grid grid-cols-1 justify-items-center md:flex md:justify-center">
+                            <h1 class="text-center text-red-700 tracking-widest text-2xl md:text-4xl font-bold self-center">WATCH NOW ON<br>
+                                 <iconify-icon class="mt-2" icon="logos:youtube" style="color: #a55959;"></iconify-icon>
+                            </h1>
+                            <div class="md:ml-5">
+                                <iframe class="mx-2 my-2 w-96 h-64 ring ring-red-500 ring-offset-4 ring-4" src="https://www.youtube.com/embed/VKgEuIuFdvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                          
+                        </div>
+                </div>
+                <!--Other Content-->
+                <div class="mt-10">
+                    <hr class="border-gray-500"></hr>
+                </div>
+
+                <div class="flex justify-between uppercase mt-2 text-sm md:text-medium">
+                    <div class="flex place-items-center">
+                        <a href="blog-article-2.html">
+                            <iconify-icon inline icon="bi:arrow-left" style="color: #7C5593;" width="20"></iconify-icon>
+                            &nbsp Read previous article 
+                        </a>
+                    </div>
+                    
+                    <div class="flex place-items-center">
+                        <a href="blog-article-4.html">
+                            Read next article 
+                            &nbsp <iconify-icon inline icon="bi:arrow-right" style="color: #7C5593;" width="20"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    </div>
+    <!--End of Content-->
+
+    <!--SCRIPT-->
+    <script src="../javascript/app.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+</body>
+</html>

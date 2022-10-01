@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Main Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js" type="text/javascript" charset="UTF-8"></script>
+
+    <!-- Theme included stylesheets -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+    <title>Add Blog</title>
+</head>
+<body class="bg-violet">
+
+    <div id="app">
+
+    <!--Full Content-->
+        <div class="mt-5 w-full">
+            
+            <!--Button-->
+            <div class="button flex justify-between items-center mx-4 md:mx-24 my-8 font-oswald">
+
+                <a href="adminBlogs.html">
+                    <button class="uppercase flex justify-center items-center bg-white hover:bg-purple-900 hover:text-white text-xl rounded-xl w-28 p-1">
+                        <iconify-icon inline icon="humbleicons:arrow-go-back" width="28"></iconify-icon>
+                        &nbsp
+                        Back
+                    </button>
+                </a>
+                <h1 class="text-3xl md:text-4xl text-white  tracking-wider font-Sofia font-semibold">Blog Editor</h1>
+                <button class="uppercase flex justify-center items-center bg-white hover:bg-purple-900 hover:text-white text-xl rounded-xl w-36 p-1">
+                    <iconify-icon inline icon="arcticons:efa-publish" width="28"></iconify-icon>
+                    &nbsp
+                    Publish
+                </button>
+            
+            </div>
+            <!--End of Button-->
+            
+            <div class="mx-4 md:mx-24">
+                <!--Blog Header Placeholder-->
+                <div class="h-48 bg-gray-100 flex justify-center items-center">
+                    <iconify-icon inline icon="fluent:add-24-regular" style="color: #848385;" width="60"></iconify-icon>
+                </div>
+
+                <!--Add Title-->
+                <div class="flex justify-center items-center mt-2">
+                    <input class="text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-2xl" type="text" placeholder="TITLE">
+                </div>
+
+                <div class="mt-2 mb-5">
+                    <hr class="border-white"></hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-4 md:mx-24 bg-white h-screen">
+        <div id="editor"></div>
+    </div>
+                
+
+    <!--SCRIPT-->
+    <script src="../javascript/editor.js"></script>
+    <script src="../javascript/app.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+</body>
+</html>

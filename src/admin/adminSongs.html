@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTS-->
+    <link rel="stylesheet" href="../../public/main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>KB - Songs</title>
+</head>
+<body class="bg-[url('../images/bg-pink.png')] bg-cover">
+<!--NAVBAR-->
+    <div id="app">
+        <div class="flex items-center justify-between">
+            <div class="fixed z-20 block md:hidden drop-shadow-md">
+                <button class="font-oswald text-xl tracking-wider flex justify-center items-center bg-gray-300 w-40 md:w-48 rounded-r-2xl md:rounded-2xl p-1.5 bg-white pointer-events-none">
+                    Admin
+                </button>
+            </div>
+
+            <nav class="md:mx-5 pr-5 pt-5 pb-5 bg-transparent w-full md:flex md:items-center md:justify-between">
+
+                <div class="flex justify-between items-center">
+
+                    <div class="z-20 block md:hidden drop-shadow-md"></div>
+
+                    <span class="ml-5 font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
+                        KB
+                    </span>
+
+                    <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                        <button @click="toggleShowSidebar">
+                            <iconify-icon icon="bx:menu" style="color: white;" width="40"></iconify-icon>
+                        </button>
+                    </span>
+                </div>
+
+                <div>
+                    <div class="hidden md:block">
+                        <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
+                                    w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+                            <li class="mx-5 mt-2 my-5 md:my-0 tracking-widest">
+                                <a href="#" class="
+                                inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">HOME</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="adminSongs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">SONGS</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="#" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">GALLERY</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="adminBlogs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">BLOGS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Mobile Menu-->
+                <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
+                    <!--Links-->
+                    <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
+                        <li class="my-2">
+                            <a href="#" class="">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="adminSongs.html">Songs</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#">Gallery</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="adminBlogs.html">Blogs</a>
+                        </li>
+                    </ul>
+
+                    <!--Close Button-->
+                    <button @click="toggleShowSidebar" class="p-5">
+                        <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    <!--END OF NAVBAR-->
+    </div>
+
+    <!--Full Content-->
+    <div class="mt-5 w-full">
+        <div class="grid grid-cols-1 justify-items-center md:justify-items-end md:mr-28">
+            <button class="uppercase font-oswald text-xl tracking-wider flex justify-center items-center bg-gray-300 w-48 rounded-2xl p-1.5 bg-white hover:bg-reddish hover:text-white">
+                <iconify-icon icon="codicon:add"></iconify-icon> &nbsp
+                Add Song
+            </button>
+        </div>
+
+        <div class="mx-24 my-5 md:my-10 grid grid-cols-1 md:grid-cols-3 gap-12"> <!--container for songs-->
+            <div class="relative song1 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
+                <div> <!--album image placeholder-->
+                    <img class="h-100 rounded-lg mb-5" src="../../images/cruel-house-album-art.jpg">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 scale-100 hover:scale-125 ease-in duration-300">
+                    <a href="https://open.spotify.com/track/38Blu3JRJmbmugwC9t6ImC?si=e058e4613c01423c"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                CRUEL HOUSE
+            </div>
+            
+            <div class="relative song2 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300">
+                <div> <!--album image placeholder-->
+                    <img class="w-100 h-100 rounded-lg mb-5 " src="../../images/palms-of-two-sinners.jpg">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
+                    <a href="https://open.spotify.com/track/4Mds7U2A1GfE0sggdoVyHt?si=65af7c380e594048"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                PALMS OF TWO SINNERS
+            </div>
+
+            <div class="relative song3 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
+                <div> <!--album image placeholder-->
+                    <img class="w-100 h-100 rounded-lg mb-5" src="../../images/impressions.jpg">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
+                    <a href="https://open.spotify.com/track/12ZNnAQqvmJmT1wGXkzKCd?si=a650eddcf21c46a4"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                IMPRESSIONS
+            </div>
+
+            <div class="relative song4 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
+                <div> <!--album image placeholder-->
+                    <img class="w-100 h-100 rounded-lg mb-5" src="../../images/syringe.jpg">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
+                    <a href="https://youtu.be/vPPhmN-M0yo"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                SYRINGE
+            </div>
+
+            <div class="relative song5 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
+                <div> <!--album image placeholder-->
+                    <img class="w-100 h-100 rounded-lg mb-5" src="../../images/give-me-a-sec.png">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
+                    <a href="https://youtu.be/zzknsbdB4K4"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                GIVE ME A SEC
+            </div>
+
+            <div class="relative song6 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
+                <div> <!--album image placeholder-->
+                    <img class="w-100 h-100 rounded-lg mb-5" src="../../images/king.png">
+                </div>
+                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
+                    <a href="https://youtu.be/GsR1FOnMvtU"> 
+                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
+                    </a>
+                </div>
+                KING - COVER
+            </div>
+
+        </div> 
+    </div>
+    <!--SCRIPT-->
+    <script src="../javascript/app.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+</body>
+</html>

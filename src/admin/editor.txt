@@ -1,0 +1,8 @@
+<!--Tools and Input Area-->
+                <div class="h-10 bg-gray-100 drop-shadow-md z-40">
+                    <!--Tools-->
+                </div>
+
+                <div class="mt h-96 bg-white">
+                    <!--Input Area-->
+                </div>
