@@ -1,13 +1,12 @@
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let fontName = document.getElementById("fontName");
-let fontSizeRef = document.getElementById("fontSizeOption");
+let fontSizeRef = document.getElementById("fontSize");
 let writingArea = document.getElementById("editor-area");
 let linkButton = document.getElementById("addLink");
 let alignButtons = document.querySelectorAll(".align")
 let formatButtons = document.querySelectorAll(".format");
 let mediaButton = document.querySelectorAll(".media-btn");
-
 
 //List
 let fontList = [
@@ -121,3 +120,6 @@ function pickMedia() {
           };
     input.click();
   }
+
+
+  

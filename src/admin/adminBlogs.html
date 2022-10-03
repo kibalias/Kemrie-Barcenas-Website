@@ -11,6 +11,7 @@
     <title>Admin - Blogs</title>
 </head>
 <body class="bg-violet">
+
 <!--NAVBAR-->
     <div id="app">
         <div class="flex items-center justify-between">
@@ -150,10 +151,25 @@
                 </div>
             </nav>
         </div>
-    </div>
+    
     <!--END OF NAVBAR-->
 
     <!--Full Content-->
+
+    <!--Delete Modal-->
+    <div v-show="showModal" class="fixed bg-white p-5 z-40  justify-center items-center w-72 h-32 drop-shadow-md rounded-xl top-1/3 right-1/4 md:right-1/3 md:top-1/2 md:mr-20">
+        <div class="text-2xl font-oswald tracking-wider flex justify-end items-center text-red-900">
+            DELETE POST?
+            <button @click="toggleShowModal" class="ml-6 pb-4">
+                <iconify-icon icon="carbon:close-filled" style="color: #ebe3ea;" width="25"></iconify-icon>
+            </button>
+        </div>
+        <div class="flex text-2xl font-oswald justify-center items-center gap-5 mt-2">
+            <button @click="toggleShowModal" class="bg-gray-100 rounded-2xl w-28 hover:bg-black hover:text-white">YES</button>
+            <button @click="toggleShowModal" class="bg-gray-100 rounded-2xl w-28  hover:bg-black hover:text-white">NO</button>
+        </div>
+    </div>
+
     <div class="mt-5 w-full">
         <div class="grid grid-cols-1 justify-items-center md:justify-items-end md:mr-28">
             <a href="blog-editor.html">
@@ -183,12 +199,11 @@
                             <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                                 <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                             </button>
-                            <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                            <button @click="toggleShowModal" @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                                 <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                             </button>
                         </div>
                     <!--END OF DELETE AND CHANGE-->
-
                 </div>
             </div>
 
@@ -210,7 +225,7 @@
                         <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                         </button>
                     </div>
@@ -237,7 +252,7 @@
                         <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                         </button>
                     </div>
@@ -264,7 +279,7 @@
                         <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                         </button>
                     </div>
@@ -291,7 +306,7 @@
                         <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                         </button>
                     </div>
@@ -318,17 +333,16 @@
                         <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                         </button>
                     </div>
                     <!--END OF DELETE AND CHANGE-->
                 </div>
             </div>
-
-        </div>
-        
+        </div>    
     </div>
+</div>
     <!--SCRIPT-->
     <script src="../javascript/app.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
