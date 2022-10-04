@@ -19,6 +19,10 @@ module.exports = {
       colors: {
         'reddish': '#A55959',
         'violet': '#A58CB3',
+        'darkviolet': {
+          '100': '#7D5892',
+          '200': '#69437D'
+        },
         'darkred': '#650E0E',
         },
 

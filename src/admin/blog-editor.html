@@ -28,14 +28,14 @@
             <div class="button flex justify-between items-center mx-4 md:mx-24 my-8 font-oswald">
 
                 <a href="adminBlogs.html">
-                    <button class="uppercase flex justify-center items-center bg-white hover:bg-purple-900 hover:text-white text-xl rounded-xl w-28 p-1">
+                    <button class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-28 p-1">
                         <iconify-icon inline icon="humbleicons:arrow-go-back" width="28"></iconify-icon>
                         &nbsp
                         Back
                     </button>
                 </a>
                 <h1 class="text-3xl md:text-4xl text-white  tracking-wider font-Sofia font-semibold">Blog Editor</h1>
-                <button class="uppercase flex justify-center items-center bg-white hover:bg-purple-900 hover:text-white text-xl rounded-xl w-36 p-1">
+                <button class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-36 p-1">
                     <iconify-icon inline icon="arcticons:efa-publish" width="28"></iconify-icon>
                     &nbsp
                     Publish
@@ -55,7 +55,7 @@
                     <input class="text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-2xl" type="text" placeholder="TITLE">
                 </div>
 
-                <div class="mt-2 mb-5">
+                <div class="mb-3">
                     <hr class="border-white"></hr>
                 </div>
             </div>
@@ -167,68 +167,119 @@
 
     <!--Insert Mobile Editor here-->
     <div>
-    <div class="md:hidden mx-4 h-full bg-white">
-        <!--Input Area-->
-        <div id="editor-area" contenteditable="true" class="px-10 py-5 w-full border-none outline-none">
+        <div class="text-area md:hidden mx-4 h-screen bg-white"">
+            <!--Input Area-->
+            <div id="editor-area" contenteditable="true" class="bg-white min-h-screen px-10 py-5 w-full border-none outline-none">
 
-        </div>
-    </div>
-    
-        <!--Hidden tools-->
-
-        <div class="bg-gray-200 drop-shadow-md md:hidden p-2 px-3">
-            <!--Tools-->
-            <div class="flex justify-center place-items-center gap-2">
-                <!--Undo and Redo-->
-                <button id="undo" class="option-button grid place-content-center">
-                    <iconify-icon icon="bx:undo" width="25"></iconify-icon>
-                </button>
-                <button id="redo" class="option-button grid place-content-center">
-                    <iconify-icon icon="bx:redo" width="25"></iconify-icon>
-                </button>
-    
-                <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
-            
-                <!--Font Style and Size-->
-                <select id="fontName" name="fontName" class="adv-option-button text-sm h-9 w-28">
-                    <option value="Arial">Arial</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Calibri">Calibri</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Lato">Lato</option>
-                    <option value="Abel">Abel</option>
-                    <option value="Permanent Marker">Permanent Marker</option>
-                </select>
-    
-                <select id="fontSize" name="fontSize" class="adv-option-button text-sm h-9">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                </select>
-    
-                <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
-    
-                <!--List-->
-                <button id="insertOrderedList" class="option-button grid place-content-center">
-                    <iconify-icon icon="ant-design:ordered-list-outlined" width="23"></iconify-icon>
-                </button>
-                <button id="insertUnorderedList" class="option-button grid place-content-center">
-                    <iconify-icon icon="ant-design:unordered-list-outlined" width="23"></iconify-icon>
-                </button>
-    
-                <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
-    
-                <button id="more" class="option-button grid place-content-center">
-                    <iconify-icon icon="ep:more-filled" width="25"></iconify-icon>
-                </button> 
             </div>
         </div>
+        
+            <!--Hidden tools-->
+            <div class="hidden-tools hidden md:hidden fixed bottom-[60px] right-0 left-0 h-12 px-10">
+                <div class="hidden-tools bg-darkviolet-100 flex justify-center rounded-lg p-2 gap-1">
+                    <!--Text Formatting-->
+                    <button id="bold" class="option-button format grid place-content-center">
+                        <iconify-icon icon="ant-design:bold-outlined" style="color:white;" width="23"></iconify-icon>  
+                    </button>
+                    <button id="italic" class="option-button format grid place-content-center">
+                        <iconify-icon icon="fluent:text-italic-16-filled" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    <button id="underline" class="option-button format grid place-content-center">
+                        <iconify-icon icon="ant-design:underline-outlined" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    <button id="strikethrough" class="option-button format grid place-content-center">
+                        <iconify-icon icon="bi:type-strikethrough" style="color:white;" width="23"></iconify-icon>
+                    </button>
+
+                    <div class="mx-2 vertical-line border border-white h-6 opacity-60 border-r" width="23"></div>
+
+                    <!--Alignment-->
+                    <button id="justifyLeft" class="option-button align grid place-content-center">
+                        <iconify-icon icon="akar-icons:text-align-left" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    <button id="justifyCenter" class=" option-button align grid place-content-center">
+                        <iconify-icon icon="akar-icons:text-align-center" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    <button id="justifyRight" class="option-button align grid place-content-center">
+                        <iconify-icon icon="akar-icons:text-align-right" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    <button id="justifyFull" class="option-button align grid place-content-center">
+                        <iconify-icon icon="akar-icons:text-align-justified" style="color:white;" width="23"></iconify-icon>
+                    </button>
+
+                    <div class="mx-2 vertical-line border border-white h-6 opacity-60 border-r" style="color:white;" width="23"></div>
+
+                    <!--Link-->
+                    <button id="addLink" class="grid place-content-center">
+                        <iconify-icon icon="akar-icons:link-chain" style="color:white;" width="23"></iconify-icon>
+                    </button>
+                    
+                    <!--Media-->
+                    <button class="grid place-content-center" onclick="pickMedia()">
+                        <iconify-icon icon="bx:image-add" style="color:white;" width="24"></iconify-icon>
+                    </button>
+                    <button class="grid place-content-center" onclick="pickMedia()">
+                        <iconify-icon icon="iconoir:add-media-video" style="color:white;" width="24"></iconify-icon>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="toolbar fixed bottom-0 w-full bg-gray-200 drop-shadow-md hidden md:hidden p-2 px-3">
+                <!--Tools-->
+                <div class="flex justify-center place-items-center gap-2">
+                    <!--Undo and Redo-->
+                    <button id="undo" class="option-button grid place-content-center">
+                        <iconify-icon icon="bx:undo" width="25"></iconify-icon>
+                    </button>
+                    <button id="redo" class="option-button grid place-content-center">
+                        <iconify-icon icon="bx:redo" width="25"></iconify-icon>
+                    </button>
+        
+                    <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
+                
+                    <!--Font Style and Size-->
+                    <select id="fontName" name="fontName" class="adv-option-button text-sm h-9 w-28">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Calibri">Calibri</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Lato">Lato</option>
+                        <option value="Abel">Abel</option>
+                        <option value="Permanent Marker">Permanent Marker</option>
+                    </select>
+        
+                    <select id="fontSize" name="fontSize" class="adv-option-button text-sm h-9">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+        
+                    <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
+        
+                    <!--Color-->
+                    <div class="input-wrapper grid place-content-center grid-cols-2 gap-2 ">
+                        <label for="foreColor"><iconify-icon icon="bx:font-color" width="23"></iconify-icon></label>
+                        <input type="color" id="forecolor" class="adv-option-button border-none h-6 w-6">
+                    </div>
+                    <div class="input-wrapper grid place-content-center grid-cols-2 gap-2 ">
+                        <label for="backColor"><iconify-icon icon="ant-design:highlight-outlined" width="23"></iconify-icon></label>
+                        <input type="color" id="backColor" class="adv-option-button border-none h-6 w-6">
+                    </div>
+        
+                    <div class="mx-1 vertical-line border border-white h-8 border-r"></div>
+        
+                    <button id="more" class="option-button grid place-content-center">
+                        <iconify-icon icon="ep:more-filled" width="25"></iconify-icon>
+                    </button> 
+                </div>
+            </div>
     </div>
     
     <!--SCRIPT-->
