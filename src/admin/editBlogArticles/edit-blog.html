@@ -18,17 +18,17 @@
         <div class="mt-5 w-full">
             
             <!--Button-->
-            <div class="button flex justify-between items-center mx-4 md:mx-24 my-8 font-oswald">
+            <div class="button flex justify-between items-center mx-4 md:mx-24 mt-8 mb-4 font-oswald">
 
                 <a href="../adminBlogs.html">
-                    <button class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-28 p-1">
+                    <button class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-24 md:w-28 p-1">
                         <iconify-icon inline icon="humbleicons:arrow-go-back" width="28"></iconify-icon>
                         &nbsp
                         Back
                     </button>
                 </a>
-                <h1 class="text-3xl md:text-4xl text-white  tracking-wider font-Sofia font-semibold">Blog Editor</h1>
-                <button id="save" onclick="promptMessage()" class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-36 p-1">
+                <h1 class="text-3xl md:text-4xl text-white font-Poppins font-semibold">Blog Editor</h1>
+                <button id="save" onclick="promptMessage()" class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-32 md:w-36 p-1">
                     <iconify-icon inline icon="arcticons:efa-publish" width="28"></iconify-icon>
                     &nbsp
                     Save
@@ -39,13 +39,16 @@
             
             <div class="mx-4 md:mx-24">
                 <!--Blog Header Placeholder-->
-                <div class="h-48 bg-gray-100 flex justify-center items-center">
-                    <iconify-icon inline icon="fluent:add-24-regular" style="color: #848385;" width="60"></iconify-icon>
+                <div id="header-placeholder" class="h-48 bg-gray-100 flex justify-center items-center bg-cover bg-center shadow-md shadow-gray-600">
+                    <label for="inputFileBtn" class="cursor-pointer">
+                        <iconify-icon inline icon="fluent:add-24-regular" style="color: #d0ccd3;" width="60" class="opacity-50"></iconify-icon>
+                    </label>
+                    <input id="inputFileBtn" type="file" accept="image/*" class="hidden">
                 </div>
 
                 <!--Add Title-->
                 <div class="flex justify-center items-center mt-2">
-                    <input id="title" class="w-full text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-2xl" type="text" placeholder="TITLE">
+                    <input id="title" class="w-full text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-md md:text-2xl" type="text" placeholder="TITLE">
                 </div>
 
                 <div class="mb-3">
@@ -279,31 +282,38 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <script>
          var passedArticleNum = localStorage.getItem("value");
-         var link, articleTitle;
+         var link, articleTitle, image;
         if(passedArticleNum == '1'){
             link = "../../blog-article/blog-article-1.html #content";
             articleTitle="THE LADY THAT WILL GIVE YOU THE IMPRESSIONS";
+            image="../../../images/kemrie-2.png";
         } else if (passedArticleNum == '2'){
             link = "../../blog-article/blog-article-2.html #content";
             articleTitle="LIFESTYLE: A LIFE FILLED WITH DOPAMINE";
+            image="../../../images/dopamine.jpg"
         } else if (passedArticleNum == '3'){
             link = "../../blog-article/blog-article-3.html #content";
             articleTitle="THIS YEAR'S BOP: PALMS OF TWO SINNERS IS OUT NOW!";
+            image="../../../images/kemrie-image.png"
         } else if (passedArticleNum == '4'){
             link = "../../blog-article/blog-article-4.html #content";
             articleTitle="LOREM IPSUM DOLOR SIT AMET";
+            image="../../../images/image-4.png"
         } else if (passedArticleNum == '5'){
             link = "../../blog-article/blog-article-5.html #content";
             articleTitle="LOREM IPSUM";
+            image="../../../images/kemrie-3.png"
         } else if (passedArticleNum == '6'){
             link = "../../blog-article/blog-article-6.html #content";
             articleTitle="KEMRIE BARCENAS HAS TAKEN ON THE INTERNET";
+            image="../../../images/kemrie-5.png"
         } 
 
         $("#text-area").load(link);
         $("#text-area-mobile").load(link);
 
         document.getElementById("title").setAttribute('value', articleTitle);
+        document.getElementById("header-placeholder").setAttribute('style', `background-image: url('${image}')`);
 
     </script>
    
