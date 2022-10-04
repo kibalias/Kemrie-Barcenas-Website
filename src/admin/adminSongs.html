@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <!--Mobile Menu-->
-                <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
+                <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-lightgray z-30 block md:hidden mobile-menu">
                     <!--Links-->
                     <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
                         <li class="my-2">
@@ -154,6 +154,7 @@
 
     <!--Full Content-->
         <div class="mt-5 w-full">
+            <!--Add-Song Modal-->
             <div v-show="showModal" class="fixed bg-white p-5 px-10 z-40  grid grid-cols-1 justify-items-center md:w-[560px] h-82 shadow-lg shadow-gray-800 rounded-xl md:top-1/4 left-[80px] right-[80px] md:right-1/4 md:left-1/4 md:ml-16">
                 <button @click="toggleShowModal" class="absolute right-[20px] top-[10px]">
                     <iconify-icon icon="carbon:close-filled" style="color: #ebe3ea;" width="25"></iconify-icon>
@@ -164,8 +165,13 @@
                 </div>
 
                 <div class="grid md:flex place-items-center mt-3">
-                    <div class="h-52 w-60 bg-gray-300 flex place-items-center justify-center">
-                        <iconify-icon inline icon="fluent:add-24-regular" style="color: #848385;" width="60"></iconify-icon>
+                    <div id="songAlbum" class="h-52 w-60 bg-gray-300 flex place-items-center justify-center bg-cover">
+                    
+                        <label for="songAlbumBtn" class="cursor-pointer">
+                            <iconify-icon inline icon="fluent:add-24-regular" style="color: #848385;" width="60"></iconify-icon>
+                        </label>
+                        <input id="songAlbumBtn" type="file" accept="image/*" class="hidden">
+                        
                     </div>
 
                     <div class="md:ml-5 md:w-1/2">
@@ -177,12 +183,12 @@
 
                         </div>
                         <div class="flex text-xl font-oswald justify-center items-end mt-2">
-                            <button @click="toggleShowModal" class="bg-gray-100 rounded-xl w-40 p-[5px] hover:bg-red-900 hover:text-white">ADD SONG</button>
+                            <button @click="toggleShowModal" class="bg-gray-100 rounded-xl w-40 p-[5px] hover:bg-red-900 hover:text-white drop-shadow-md">ADD SONG</button>
                         </div>
                     </div>
                 </div>
-
             </div>
+            <!--End of Add-Song modal-->
 
             <div class="grid grid-cols-1 justify-items-center md:justify-items-end md:mr-28">
                 <button @click="toggleShowModal" class="uppercase font-oswald text-xl tracking-wider flex justify-center items-center gap-1 w-48 rounded-2xl p-1.5 bg-white hover:bg-reddish hover:text-white">
@@ -269,6 +275,7 @@
 
     <!--SCRIPT-->
     <script src="../javascript/app.js"></script>
+    <script src="../javascript/song.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
 </html>

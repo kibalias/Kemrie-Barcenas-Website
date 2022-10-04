@@ -14,6 +14,8 @@ module.exports = {
         'abel': ['Abel'],
         'lato': ['Lato'],
         'Sofia': ['Sofia'],
+        'Josefin': ['Josefin Sans'],
+        'Poppins': ['Poppins'],
         },
 
       colors: {
@@ -24,6 +26,7 @@ module.exports = {
           '200': '#69437D'
         },
         'darkred': '#650E0E',
+        'lightgray': '#EAE7FA',
         },
 
       width: {

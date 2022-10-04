@@ -149,7 +149,6 @@ function pickMedia() {
 
 
 //Pass value of a div to blog editor
-
 function sendValue(e){
   var articleNum = e;
   localStorage.setItem("value", articleNum);
@@ -167,6 +166,27 @@ function publishBlogPrompt(){
   alert("Blog Published Successfully!");
   window.location.href="adminBlogs.html";
 }
+
+//On click, add image to blog header
+let uploadBtn = document.getElementById("inputFileBtn");
+let fileInput = document.getElementById('header-placeholder');
+
+uploadBtn.addEventListener('change', (e) =>{
+    const file = e.target.files[0];
+
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = function (){
+       // images[0].setAttribute('src', fileReader.result);
+          fileInput.setAttribute('style', `background-image: url('${fileReader.result}')`);
+          
+    }
+})
+
+
+
+
+
 
  
 
