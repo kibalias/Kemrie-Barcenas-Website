@@ -148,6 +148,28 @@ function pickMedia() {
   });
 
 
+//Pass value of a div to blog editor
+
+function sendValue(e){
+  var articleNum = e;
+  localStorage.setItem("value", articleNum);
+  window.location.href="editBlogArticles/edit-blog.html";
+}
+
+//Alert when Save button is clicked
+function promptMessage(){
+  alert("Blog Saved Successfully!");
+  window.location.href="../adminBlogs.html";
+}
+
+//Alert when Publish button is clicked
+function publishBlogPrompt(){
+  alert("Blog Published Successfully!");
+  window.location.href="adminBlogs.html";
+}
+
+ 
+
 
 
 

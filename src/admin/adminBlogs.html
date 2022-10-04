@@ -196,9 +196,11 @@
 
                     <!--DELETE AND CHANGE ICON-->
                         <div class="text-red-600 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                            <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
-                                <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
-                            </button>
+                            
+                                <button onclick="sendValue(1)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                                    <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
+                                </button>
+                            
                             <button @click="toggleShowModal" @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                                 <iconify-icon icon="ant-design:delete-filled" style="color: #992121;" width="30"></iconify-icon>
                             </button>
@@ -222,7 +224,7 @@
                     
                 <!--DELETE AND CHANGE ICON-->
                     <div class="text-red-600 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button onclick="sendValue(2)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
                         <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
@@ -249,7 +251,7 @@
                     
                 <!--DELETE AND CHANGE ICON-->
                     <div class="text-red-600 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button onclick="sendValue(3)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
                         <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
@@ -276,7 +278,7 @@
                     
                     <!--DELETE AND CHANGE ICON-->
                     <div class="text-red-600 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button onclick="sendValue(4)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
                         <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
@@ -303,7 +305,7 @@
                     
                     <!--DELETE AND CHANGE ICON-->
                     <div class="text-red-600 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button onclick="sendValue(5)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
                         <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
@@ -330,7 +332,7 @@
                     
                     <!--DELETE AND CHANGE ICON-->
                     <div class="text-red-900 mt-3 ml-56 md:ml-48 flex items-center justify-between place-items-center">
-                        <button class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
+                        <button onclick="sendValue(6)" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
                             <iconify-icon icon="bxs:edit" style="color: #992121;" width="30"></iconify-icon></iconify-icon>
                         </button>
                         <button @click="toggleShowModal" class="bg-gray-200 rounded-full p-2 flex items-center justify-between place-items-center">
@@ -345,6 +347,7 @@
 </div>
     <!--SCRIPT-->
     <script src="../javascript/app.js"></script>
+    <script src="../javascript/script.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
 </html>

@@ -4,18 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/main.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../../public/main.css">
+    <link rel="stylesheet" href="../../css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- Main Quill library -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js" type="text/javascript" charset="UTF-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js" type="text/javascript" charset="UTF-8"></script>
-
-    <!-- Theme included stylesheets -->
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
-    <title>Add Blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Edit Blog</title>
 </head>
 <body class="bg-violet">
 
@@ -27,7 +20,7 @@
             <!--Button-->
             <div class="button flex justify-between items-center mx-4 md:mx-24 my-8 font-oswald">
 
-                <a href="adminBlogs.html">
+                <a href="../adminBlogs.html">
                     <button class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-28 p-1">
                         <iconify-icon inline icon="humbleicons:arrow-go-back" width="28"></iconify-icon>
                         &nbsp
@@ -35,10 +28,10 @@
                     </button>
                 </a>
                 <h1 class="text-3xl md:text-4xl text-white  tracking-wider font-Sofia font-semibold">Blog Editor</h1>
-                <button onclick="publishBlogPrompt()" class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-36 p-1">
+                <button id="save" onclick="promptMessage()" class="uppercase flex justify-center items-center bg-white hover:bg-darkviolet-200 hover:text-white text-xl rounded-xl w-36 p-1">
                     <iconify-icon inline icon="arcticons:efa-publish" width="28"></iconify-icon>
                     &nbsp
-                    Publish
+                    Save
                 </button>
             
             </div>
@@ -52,7 +45,7 @@
 
                 <!--Add Title-->
                 <div class="flex justify-center items-center mt-2">
-                    <input class="w-full text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-2xl" type="text" placeholder="TITLE">
+                    <input id="title" class="w-full text-center border-none outline-none bg-transparent text-black font-lato placeholder-black text-2xl" type="text" placeholder="TITLE">
                 </div>
 
                 <div class="mb-3">
@@ -151,23 +144,20 @@
             </div>
         </div>
 
-        <div class="mt h-auto bg-white">
+        <div id="text-area" class="bg-white h-auto py-12 px-20" contenteditable="true">
             <!--Input Area-->
-            <div id="editor-area" contenteditable="true" class="px-20 py-5 w-full border-none outline-none">
+            <div id="editor-area" contenteditable="true" class="px-20 py-5 w-full bg-white min-h-screen border-none outline-none">
 
             </div>
         </div>
     </div>
     <!--End of Editor-->
 
-    <div class="hidden mx-4 md:mx-24 bg-white h-screen">
-    <div id="editor"></div>
-
     </div>
 
     <!--Insert Mobile Editor here-->
     <div>
-        <div class="text-area md:hidden mx-4 h-auto bg-white"">
+        <div id="text-area-mobile" contenteditable="true" class="text-area md:hidden mx-4 h-auto bg-white p-5">
             <!--Input Area-->
             <div id="editor-area" contenteditable="true" class="bg-white min-h-screen px-10 py-5 w-full border-none outline-none">
 
@@ -283,9 +273,39 @@
     </div>
     
     <!--SCRIPT-->
-    <script src="../javascript/editor.js"></script>
-    <script src="../javascript/app.js"></script>
-    <script src="../javascript/script.js"></script>
+    <script src="../../javascript/editor.js"></script>
+    <script src="../../javascript/app.js"></script>
+    <script src="../../javascript/script.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script>
+         var passedArticleNum = localStorage.getItem("value");
+         var link, articleTitle;
+        if(passedArticleNum == '1'){
+            link = "../../blog-article/blog-article-1.html #content";
+            articleTitle="THE LADY THAT WILL GIVE YOU THE IMPRESSIONS";
+        } else if (passedArticleNum == '2'){
+            link = "../../blog-article/blog-article-2.html #content";
+            articleTitle="LIFESTYLE: A LIFE FILLED WITH DOPAMINE";
+        } else if (passedArticleNum == '3'){
+            link = "../../blog-article/blog-article-3.html #content";
+            articleTitle="THIS YEAR'S BOP: PALMS OF TWO SINNERS IS OUT NOW!";
+        } else if (passedArticleNum == '4'){
+            link = "../../blog-article/blog-article-4.html #content";
+            articleTitle="LOREM IPSUM DOLOR SIT AMET";
+        } else if (passedArticleNum == '5'){
+            link = "../../blog-article/blog-article-5.html #content";
+            articleTitle="LOREM IPSUM";
+        } else if (passedArticleNum == '6'){
+            link = "../../blog-article/blog-article-6.html #content";
+            articleTitle="KEMRIE BARCENAS HAS TAKEN ON THE INTERNET";
+        } 
+
+        $("#text-area").load(link);
+        $("#text-area-mobile").load(link);
+
+        document.getElementById("title").setAttribute('value', articleTitle);
+
+    </script>
+   
 </body>
 </html>
