@@ -121,5 +121,34 @@ function pickMedia() {
     input.click();
   }
 
+  // Hiding and showing toolbar in blog-editor.html
+
+  document.addEventListener('click', function showToolbar(event) {
+    const textArea = document.querySelector('.text-area');
+    const toolbar = document.querySelector('.toolbar');
+    const otherTools = document.querySelector('.hidden-tools');
+
+    if (textArea.contains(event.target) || toolbar.contains(event.target) || otherTools.contains(event.target)) {
+      toolbar.classList.remove('hidden');
+    }else{
+      toolbar.classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', function showToolbar(event) {
+    const moreBtn = document.getElementById('more');
+    const textArea = document.querySelector('.text-area');
+    const otherTools = document.querySelector('.hidden-tools');
+
+    if (more.contains(event.target) || otherTools.contains(event.target)) {
+      otherTools.classList.remove('hidden');
+    }else{
+      otherTools.classList.add('hidden');
+    }
+  });
+
+
+
+
 
   
