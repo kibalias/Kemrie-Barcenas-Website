@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../public/main.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>KB - Songs</title>
+    <title>KB - Gallery</title>
 </head>
-<body class="bg-[url('../images/bg-pink.png')] bg-cover">
+<body class="galleryBody bg-[#6161CC]">
 <!--NAVBAR-->
     <div id="app">
         <div class="flex items-center justify-between">
@@ -170,86 +170,64 @@
     <!--END OF NAVBAR-->
 
     <!--Full Content-->
-    <div class="mt-10 w-full">
-        <h1 class="tracking-widest text-3xl md:text-5xl text-white text-center font-bold font-permanentMarker ">
-            STREAM WITH ME
-        </h1> 
-        <div class="mx-24 my-5 md:my-10 grid grid-cols-1 md:grid-cols-3 gap-12"> <!--container for songs-->
-            <div class="relative song1 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
-                <div> <!--album image placeholder-->
-                    <img class="h-100 rounded-lg mb-5" src="../images/cruel-house-album-art.jpg">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 scale-100 hover:scale-125 ease-in duration-300">
-                    <a href="https://open.spotify.com/track/38Blu3JRJmbmugwC9t6ImC?si=e058e4613c01423c"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                CRUEL HOUSE
+    <div class="mt-4 w-full">
+        <img  src="" id="portrait" class="portrait">	
+			<script type="text/javascript">
+				let portrait= document.getElementById('portrait');
+				let images = ["../images/s1.png","../images/s2.png"]
+				setInterval(function(){
+					let random = Math.floor(Math.random() * 2);
+					portrait.src = images[random];
+		
+				}, 800);
+			</script>
+    
+    <div class="gallery">
+        <div class="wrapper">
+            <!-- filter Items -->
+            <nav>
+              <div class="items">
+                <span class="item active" data-name="all">All</span>
+                <span class="item" data-name="selfie">Selfie</span>
+                <span class="item" data-name="portrait">Portrait</span>
+                <span class="item" data-name="debut">Debut</span>
+                <span class="item" data-name="me">Simply Me</span>
+                <span class="item" data-name="others">Others</span>
+              </div>
+            </nav>
+            <!-- filter Images -->
+            <div class="gallery">
+              <div class="image" data-name="me"><span><img src="../images/img1.jpg" alt=""></span></div>
+              <div class="image" data-name="me"><span><img src="../images/img2.jpg" alt=""></span></div>
+              <div class="image" data-name="others"><span><img src="../images/img3.jpg" alt=""></span></div>
+              <div class="image" data-name="portrait"><span><img src="../images/img4.jpg" alt=""></span></div>
+              <div class="image" data-name="others"><span><img src="../images/img5.jpg" alt=""></span></div>
+              <div class="image" data-name="others"><span><img src="../images/img6.jpg" alt=""></span></div>
+              <div class="image" data-name="portrait"><span><img src="../images/img7.jpg" alt=""></span></div>
+              <div class="image" data-name="debut"><span><img src="../images/img8.jpg" alt=""></span></div>
+              <div class="image" data-name="selfie"><span><img src="../images/img9.jpg" alt=""></span></div>
+              <div class="image" data-name="selfie"><span><img src="../images/img10.jpg" alt=""></span></div>
+              <div class="image" data-name="portrait"><span><img src="../images/img11.jpg" alt=""></span></div>
             </div>
+          </div>
+          <!-- fullscreen img preview box -->
+          <div class="preview-box">
+            <div class="details">
+              <span class="title">Image Category: <p></p></span>
+              <span class="icon">
+                <iconify-icon icon="carbon:close" style="color: #1515af;" width="24"></iconify-icon>
+            </span>
+            </div>
+            <div class="image-box"><img src="" alt=""></div>
+          </div>
+          <div class="shadow"></div>
             
-            <div class="relative song2 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300">
-                <div> <!--album image placeholder-->
-                    <img class="w-100 h-100 rounded-lg mb-5 " src="../images/palms-of-two-sinners.jpg">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
-                    <a href="https://open.spotify.com/track/4Mds7U2A1GfE0sggdoVyHt?si=65af7c380e594048"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                PALMS OF TWO SINNERS
-            </div>
-
-            <div class="relative song3 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
-                <div> <!--album image placeholder-->
-                    <img class="w-100 h-100 rounded-lg mb-5" src="../images/impressions.jpg">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
-                    <a href="https://open.spotify.com/track/12ZNnAQqvmJmT1wGXkzKCd?si=a650eddcf21c46a4"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                IMPRESSIONS
-            </div>
-
-            <div class="relative song4 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
-                <div> <!--album image placeholder-->
-                    <img class="w-100 h-100 rounded-lg mb-5" src="../images/syringe.jpg">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
-                    <a href="https://youtu.be/vPPhmN-M0yo"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                SYRINGE
-            </div>
-
-            <div class="relative song5 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
-                <div> <!--album image placeholder-->
-                    <img class="w-100 h-100 rounded-lg mb-5" src="../images/give-me-a-sec.png">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
-                    <a href="https://youtu.be/zzknsbdB4K4"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                GIVE ME A SEC
-            </div>
-
-            <div class="relative song6 bg-gray-300 text-center rounded-lg p-5 font-oswald text-2xl hover:scale-110 ease-in duration-300 ">
-                <div> <!--album image placeholder-->
-                    <img class="w-100 h-100 rounded-lg mb-5" src="../images/king.png">
-                </div>
-                <div class="absolute z-10 bottom-1/4 inset-x-1/3 opacity-75 hover:scale-125 ease-in duration-300">
-                    <a href="https://youtu.be/GsR1FOnMvtU"> 
-                        <iconify-icon icon="ci:play-circle-outline" style="color: white;" width="75" height="75"></iconify-icon>
-                    </a>
-                </div>
-                KING - COVER
-            </div>
-
-        </div> 
+        </div>
     </div>
     <!--SCRIPT-->
+    <script src="javascript/bootstrap.bundle.min.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/gallery.js"></script>
     <script src="javascript/app.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>

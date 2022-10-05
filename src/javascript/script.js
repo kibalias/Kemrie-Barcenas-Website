@@ -1,3 +1,5 @@
+// Functional formatting in Blog Editor
+
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let fontName = document.getElementById("fontName");
@@ -21,13 +23,13 @@ let fontList = [
     "Permanent Marker"
 ];
 
-//Initial Settings
+// Initial Settings
 const initializer = () =>{
     //highlighting buttons function
     highlighter(alignButtons, true);
     highlighter(formatButtons, false);
 
-    //options for font names
+    // options for font names
     fontList.map((value) =>{
         let option = document.createElement("option");
         option.value = value;
@@ -121,8 +123,13 @@ function pickMedia() {
     input.click();
   }
 
-  // Hiding and showing toolbar in blog-editor.html
+  /* End of Blog editor functionalities */
 
+
+  /* Hiding and showing toolbar in blog-editor.html in mobile view
+   * This method shows the toolbar when clicked upon 
+   * the editing area and will be hidden once clicked outside the area
+   */
   document.addEventListener('click', function showToolbar(event) {
     const textArea = document.querySelector('.text-area');
     const toolbar = document.querySelector('.toolbar');
@@ -135,6 +142,9 @@ function pickMedia() {
     }
   });
 
+  /* Hiding and showing the extended toolbar in blog-editor.html in mobile view
+   * This method unhides the extended tools once the more button is clicked
+   */
   document.addEventListener('click', function showToolbar(event) {
     const moreBtn = document.getElementById('more');
     const textArea = document.querySelector('.text-area');
@@ -148,26 +158,28 @@ function pickMedia() {
   });
 
 
-//Pass value of a div to blog editor
+/* Loads value of a div to blog editor for editing
+ * (In admin, editing of blogs redirect to editor with editable content)
+ */
 function sendValue(e){
   var articleNum = e;
   localStorage.setItem("value", articleNum);
   window.location.href="editBlogArticles/edit-blog.html";
 }
 
-//Alert when Save button is clicked
+// Alert when Save button is clicked
 function promptMessage(){
   alert("Blog Saved Successfully!");
   window.location.href="../adminBlogs.html";
 }
 
-//Alert when Publish button is clicked
+// Alert when Publish button is clicked
 function publishBlogPrompt(){
   alert("Blog Published Successfully!");
   window.location.href="adminBlogs.html";
 }
 
-//On click, add image to blog header
+// On click, add image to blog header
 let uploadBtn = document.getElementById("inputFileBtn");
 let fileInput = document.getElementById('header-placeholder');
 
@@ -177,20 +189,8 @@ uploadBtn.addEventListener('change', (e) =>{
     let fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = function (){
-       // images[0].setAttribute('src', fileReader.result);
-          fileInput.setAttribute('style', `background-image: url('${fileReader.result}')`);
+        
+      fileInput.setAttribute('style', `background-image: url('${fileReader.result}')`);
           
     }
 })
-
-
-
-
-
-
- 
-
-
-
-
-  
