@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Admin - Gallery</title>
+</head>
+<body class="galleryBody bg-[#6161CC]">
+<!--NAVBAR-->
+    <div id="app">
+        <div class="flex items-center justify-between">
+            <div class="fixed z-20 block md:hidden drop-shadow-md">
+                <button class="font-oswald text-xl tracking-wider flex justify-center items-center w-40 md:w-48 rounded-r-2xl md:rounded-2xl p-1.5 bg-white pointer-events-none">
+                    Admin
+                </button>
+            </div>
+
+            <nav class="md:mx-5 pr-5 pt-5 pb-5 bg-transparent w-full md:flex md:items-center md:justify-between">
+
+                <div class="flex justify-between items-center">
+
+                    <div class="z-20 block md:hidden drop-shadow-md mr-20"></div>
+
+                    <span class="ml-5 font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
+                        KB
+                    </span>
+
+                    <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                        <button @click="toggleShowSidebar">
+                            <iconify-icon icon="bx:menu" style="color: white;" width="40"></iconify-icon>
+                        </button>
+                    </span>
+                </div>
+
+                <div>
+                    <div class="hidden md:block">
+                        <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
+                                    w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+                            <li class="mx-5 mt-2 my-5 md:my-0 tracking-widest">
+                                <a href="#" class="
+                                inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">HOME</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="adminSongs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">SONGS</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="adminGallery.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">GALLERY</a>
+                            </li>
+                            <li class="mx-5 my-5 md:my-0 tracking-widest">
+                                <a href="adminBlogs.html" class="inline-block
+                                relative
+                                cursor-pointer
+                                transition-all
+                                duration-500
+                                before:absolute
+                                before:-bottom-2
+                                before:left-1/2
+                                before:-translate-x-1/2
+                                before:w-0
+                                before:h-0.5
+                                before:rounded-full
+                                before:opacity-0
+                                before:transition-all
+                                before:duration-500
+                                before:bg-white
+                                hover:before:w-full
+                                hover:before:opacity-100">BLOGS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Mobile Menu-->
+                <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-lightgray z-30 block md:hidden mobile-menu">
+                    <!--Links-->
+                    <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
+                        <li class="my-2">
+                            <a href="#" class="">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="adminSongs.html">Songs</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="adminGallery.html">Gallery</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="adminBlogs.html">Blogs</a>
+                        </li>
+                    </ul>
+
+                    <!--Close Button-->
+                    <button @click="toggleShowSidebar" class="p-5">
+                        <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    <!--END OF NAVBAR-->
+    </div>
+
+    <!--Full Content-->
+        <div class="mt-5 w-full">
+        <div class="headerImage">
+            <img  src="" id="portraitImage" class="portrait">	
+        </div>
+                
+    <div class="Gallerybtn">
+         <button id="Gallerybtn" class="w-20 bg-slate-100 hover:bg-slate-300 rounded-full"><iconify-icon icon="ant-design:camera-filled" style="color: black;" width="40" height="40"></iconify-icon></button>    
+    </div>   
+    
+<!--CHANGE IMAGE START-->
+<div class="popupGh">
+    <div class="popup-contentGh">
+        <button class="closeGh"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+        <center><h1 class="font-permanentMarker text-2xl text-violet-700">UPDATE GALLERY HEADER</h1> </center>
+        <br>
+
+        <label class=" mt-3 text-fuchsia-800"><b>CURRENT:</b></label>
+        <div class="flex flex-row  justify-center  gap-3">
+            <div class="mt-3 w-56 h-16 bg-zinc-300"><img class="w-56 h-16 object-fill" src="../../images/s1.png" alt=""></div>
+            <div class="mt-3 w-56 h-16 bg-zinc-300"><img class="w-56 h-16 object-fill" src="../../images/s2.png" alt=""></div>
+        </div>
+        
+        <label class=" mt-3 text-fuchsia-800"><b>UPLOAD NEW PHOTO:</b>   </label>
+        <div class="flex flex-row  justify-center  gap-4">
+            <div class="mt-3 w-56 h-16 bg-zinc-300">
+                <input type="file" id="btnGalleryHeader1" style="display:none" class=" text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl" accept="image/*">   
+                <label for="btnGalleryHeader1" class="absolute ml-24 mt-3 "><iconify-icon icon="akar-icons:plus" width="30" height="30"></iconify-icon></label> 
+                <img class="w-56 h-16 object-cover" id="galleryheader1" >
+            </div>   
+            <div class="mt-3 w-56 h-16 bg-zinc-300">
+                <input type="file" id="btnGalleryHeader2" style="display:none" class=" text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl" accept="image/*">   
+                <label for="btnGalleryHeader2" class="absolute ml-24 mt-3 "><iconify-icon icon="akar-icons:plus" width="30" height="30"></iconify-icon></label> 
+                <img class="w-56 h-16 object-cover" id="galleryheader2" >
+            </div>  
+        </div> 
+        
+
+        
+        <center><button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+        </center>
+    </div>
+    <script>
+        document.getElementById("Gallerybtn").addEventListener("click",function(){
+            document.querySelector(".popupGh").style.display = "flex";
+        })
+
+        document.querySelector(".closeGh").addEventListener("click",function(){
+            document.querySelector(".popupGh").style.display = "none";
+
+        })
+
+        let btnGalleryHeader1 = document.getElementById("btnGalleryHeader1");
+        let galleryheader1 = document.getElementById("galleryheader1");
+            btnGalleryHeader1.onchange = () => {
+                let reader = new FileReader();
+                reader.readAsDataURL(btnGalleryHeader1.files[0]);
+                console.log(btnGalleryHeader1.files[0]);
+                reader.onload = () => {
+                galleryheader1.setAttribute("src", reader.result);
+                } 
+            } 
+
+        let btnGalleryHeader2 = document.getElementById("btnGalleryHeader2");
+        let galleryheader2 = document.getElementById("galleryheader2");
+            btnGalleryHeader2.onchange = () => {
+                let reader = new FileReader();
+                reader.readAsDataURL(btnGalleryHeader2.files[0]);
+                console.log(btnGalleryHeader2.files[0]);
+                reader.onload = () => {
+                galleryheader2.setAttribute("src", reader.result);
+                } 
+            } 
+    </script>
+
+</div>
+<!--CHANGE IMAGE END-->  
+
+        
+
+
+    <div class="gallery">
+       
+        
+    <div class="wrapper">
+            <center><button id="addImage" class="text-2xl bg-indigo-50 hover:bg-indigo-200 w-48 h-12 rounded-full font-acme py-2 px-4 rounded inline-flex items-center">
+                <iconify-icon inline icon="bxs:image-add" width="37" height="37"></iconify-icon> Add Image</button></center><br><br>
+    <!--ADD IMAGE START-->
+        <div class="popupGa">
+            <div class="popup-contentGa">
+                  <button class="closeGa"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+                  <center><h1 class="font-permanentMarker text-2xl text-violet-700">Add Image</h1> 
+                  
+                <div class="mt-3 w-40 h-40 bg-zinc-300">
+                    <input type="file" id="addImgBtn" style="display:none;" accept="image/*"> 
+                    <label for="addImgBtn" class="absolute mt-14" style="margin-left: -20px;">
+                        <iconify-icon icon="akar-icons:camera" width="40" height="40"></iconify-icon>
+                    </label> 
+                    <img class="w-40 h-40 object-cover" id="chosenAddImage" >
+                </div>   
+                
+                <figcaption id="addCaption" class=" font-acme text-violet-700"></figcaption> 
+                
+               
+            
+                <script>                   
+                    let addImgBtn1 = document.getElementById("addImgBtn");
+                    let chosenAddImage1 = document.getElementById("chosenAddImage");
+                    let addCaption1 = document.getElementById("addCaption");
+
+                    addImgBtn1.onchange = () => {
+                        let reader = new FileReader();
+                         reader.readAsDataURL(addImgBtn1.files[0]);
+                         console.log(addImgBtn1.files[0]);
+                        reader.onload = () => {
+                        chosenAddImage1.setAttribute("src", reader.result);
+                         } 
+                         addCaption1.textContent = addImgBtn1.files[0].name;
+                    } 
+                </script>
+                <br>
+                <label class=" mt-3 text-violet-700"><b>CATEGORY</b></label>
+                <br>
+                
+                <input  class="w-full mt-1.5 font-acme text-violet-700" type="text" >
+                
+        
+                <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPLOAD </button>       
+                 </center>
+            </div>
+        <script>
+             document.getElementById("addImage").addEventListener("click",function(){
+                document.querySelector(".popupGa").style.display = "flex";
+                 })
+
+             document.querySelector(".closeGa").addEventListener("click",function(){
+                document.querySelector(".popupGa").style.display = "none";
+
+                })
+        </script>
+
+        </div>
+    <!--ADD IMAGE END-->  
+
+
+            <!-- filter Items -->
+            <nav>
+              <div class="items">
+                <span class="item active" data-name="all">All</span>
+                <span class="item" data-name="selfie">Selfie</span>
+                <span class="item" data-name="portrait">Portrait</span>
+                <span class="item" data-name="debut">Debut</span>
+                <span class="item" data-name="me">Simply Me</span>
+                <span class="item" data-name="others">Others</span>
+              </div>
+            </nav>
+            <!-- filter Images -->
+            <div class="galleryAdmin">
+                <div class="imageAdmin" data-name="me">
+                    <div class="iconDelete"><center>
+                        <button id="deleteImage"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                     <span><img src="../../images/img1.jpg" alt=""></span>
+                </div>
+              <div class="imageAdmin" data-name="me">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage1"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage1"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                     <span><img src="../../images/img2.jpg" alt=""></span>
+             </div>
+              <div class="imageAdmin" data-name="others">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage2"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage2"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img3.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="portrait">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage3"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage3"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img4.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="others">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage4"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage4"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img5.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="others">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage5"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage5"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img6.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="portrait">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage6"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage6"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div><span><img src="../../images/img7.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="debut">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage7"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage7"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img8.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="selfie">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage8"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage8"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img9.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="selfie">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage9"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage9"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img10.jpg" alt=""></span></div>
+              <div class="imageAdmin" data-name="portrait">
+                <div class="iconDelete"><center>
+                    <button id="deleteImage10"><iconify-icon icon="fluent:delete-48-filled" width="40" height="40"></iconify-icon></button><br>
+                        <button id="editImage10"><iconify-icon icon="dashicons:edit-page" style="opacity:1" width="40" height="40"></iconify-icon></button>
+                    </center>
+                </div>
+                <span><img src="../../images/img11.jpg" alt=""></span></div>
+            </div>
+          </div>
+          
+
+    <!--DELETE IMAGE START-->
+        <div class="popupDel">
+            <div class="popup-contentDel">
+                  <button class="closeDel"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+                  <center><h1 class="font-acme text-2xl">DELETE IMAGE</h1> 
+                    <br>
+                    <label class="  text-xl text-fuchsia-800"><b>ARE YOU SURE?</b>   </label><br>
+                               
+                <div class="mt-3 inline-flex  rounded-md shadow-sm" role="group">
+                     <button type="button" class="mr-7 py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-full border border-gray-900 hover:bg-gray-900 hover:text-blue-500 focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-violet-900 dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                YES
+                     </button>
+                    <button type="button" class="mr-7 py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-full border border-gray-900 hover:bg-gray-900 hover:text-blue-500 focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-violet-900 dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                NO
+                     </button>
+                     <button type="button" class=" py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-full border border-gray-900 hover:bg-gray-900 hover:text-blue-500 focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-violet-900 dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                CANCEL
+                    </button>
+                 </div></center>
+            </div>
+
+        <script>
+             document.getElementById("deleteImage").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+            document.getElementById("deleteImage1").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+
+                document.getElementById("deleteImage2").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+
+                document.getElementById("deleteImage3").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage4").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage5").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage6").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage7").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage8").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage9").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+                document.getElementById("deleteImage10").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "flex";
+                 })
+
+             document.querySelector(".closeDel").addEventListener("click",function(){
+                document.querySelector(".popupDel").style.display = "none";
+
+                })
+        </script>
+
+        </div>
+    <!--DELETE IMAGE END-->  
+    
+    
+    <!--EDIT IMAGE START-->
+        <div class="popupEdit">
+            <div class="popup-contentEdit">
+                  <button class="closeEdit"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+                  <center><h1 class="font-permanentMarker text-2xl text-violet-700">EDIT IMAGE</h1> 
+                    <br>
+                    <label class="  text-fuchsia-800"><b>UPLOAD NEW PHOTO:</b>   </label>
+                    <div class=" w-40 h-40 bg-zinc-300">
+                        <input type="file" id="btnEditImage" style="display:none" class=" text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl" accept="image/*">   
+                        <label for="btnEditImage" class="absolute mt-14" style="margin-left: -20px;"><iconify-icon icon="akar-icons:camera" width="40" height="40"></iconify-icon></label> 
+                        <img class="w-40 h-40 object-cover" id="editImagePreview" >
+                    </div> 
+                    <figcaption id="EditCaption" class=" font-acme text-violet-700"></figcaption> 
+                  
+                    <label class=" mt-3 text-fuchsia-800"><b>NEW CATEGORY</b></label>
+                    <br>
+                    
+                    <input  class="w-full mt-1.5 font- acme text-fuchsia-800" type="text" >
+                    
+                    <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+                     </center>
+            </div>
+
+            <script>
+                let btnEditImage = document.getElementById("btnEditImage");
+                let editImagePreview = document.getElementById("editImagePreview");
+                let EditCaption = document.getElementById("EditCaption");
+                 btnEditImage.onchange = () => {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(btnEditImage.files[0]);
+                    console.log(btnEditImage.files[0]);
+                    reader.onload = () => {
+                        editImagePreview.setAttribute("src", reader.result);
+                    } 
+                    EditCaption.textContent = btnEditImage.files[0].name;
+                } 
+    
+    
+                 document.getElementById("editImage").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                document.getElementById("editImage1").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+    
+                    document.getElementById("editImage2").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+    
+                    document.getElementById("editImage3").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage4").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage5").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage6").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage7").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage8").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage9").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+                    document.getElementById("editImage10").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "flex";
+                     })
+    
+                 document.querySelector(".closeEdit").addEventListener("click",function(){
+                    document.querySelector(".popupEdit").style.display = "none";
+    
+                    })
+            </script>
+        </div>
+    <!--EDIT IMAGE END-->  
+            
+        </div>
+    </div> 
+    
+
+    <!--OTHER SCRIPT FUNCTIONS-->
+    <script type="text/javascript">
+        let portrait= document.getElementById('portraitImage');
+        let images = ["../../images/s1.png","../../images/s2.png"]
+        setInterval(function(){
+            let random = Math.floor(Math.random() * 2);
+            portraitImage.src = images[random];
+
+        }, 800);
+    </script>
+
+    <!--SCRIPT-->
+    <script src="../javascript/app.js"></script>
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/gallery.js"></script>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+</body>
+</html>
