@@ -154,16 +154,14 @@
     </div>
 
     <!--Full Content-->
-        <div class="mt-5 w-full">
-        <div class="headerImage">
-            <img  src="" id="portraitImage" class="portrait">	
-        </div>
-                
+    <div class="mt-5 w-full">
+        <img  src="" id="portraitImage" class="portrait">	
+            
     <div class="Gallerybtn">
          <button id="Gallerybtn" class="w-20 bg-slate-100 hover:bg-slate-300 rounded-full"><iconify-icon icon="ant-design:camera-filled" style="color: black;" width="40" height="40"></iconify-icon></button>    
     </div>   
     
-<!--CHANGE IMAGE START-->
+<!--CHANGE Header START-->
 <div class="popupGh">
     <div class="popup-contentGh">
         <button class="closeGh"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
@@ -229,12 +227,12 @@
     </script>
 
 </div>
-<!--CHANGE IMAGE END-->  
+<!--CHANGE Header END-->  
 
         
 
 
-    <div class="gallery">
+<div class="gallery">
        
         
     <div class="wrapper">
@@ -391,6 +389,8 @@
                 <span><img src="../../images/img11.jpg" alt=""></span></div>
             </div>
           </div>
+
+                   
           
 
     <!--DELETE IMAGE START-->
@@ -530,116 +530,120 @@
                     
                     <input  class="w-full mt-1.5 font- acme text-fuchsia-800" type="text" >
                     
-                    <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+            
+                     <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
                      </center>
             </div>
 
-            <script>
-                let btnEditImage = document.getElementById("btnEditImage");
-                let editImagePreview = document.getElementById("editImagePreview");
-                let EditCaption = document.getElementById("EditCaption");
-                 btnEditImage.onchange = () => {
-                    let reader = new FileReader();
-                    reader.readAsDataURL(btnEditImage.files[0]);
-                    console.log(btnEditImage.files[0]);
-                    reader.onload = () => {
-                        editImagePreview.setAttribute("src", reader.result);
-                    } 
-                    EditCaption.textContent = btnEditImage.files[0].name;
+        <script>
+            let btnEditImage = document.getElementById("btnEditImage");
+            let editImagePreview = document.getElementById("editImagePreview");
+            let EditCaption = document.getElementById("EditCaption");
+             btnEditImage.onchange = () => {
+                let reader = new FileReader();
+                reader.readAsDataURL(btnEditImage.files[0]);
+                console.log(btnEditImage.files[0]);
+                reader.onload = () => {
+                    editImagePreview.setAttribute("src", reader.result);
                 } 
-    
-    
-                 document.getElementById("editImage").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                document.getElementById("editImage1").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-    
-                    document.getElementById("editImage2").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-    
-                    document.getElementById("editImage3").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage4").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage5").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage6").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage7").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage8").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage9").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-                    document.getElementById("editImage10").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "flex";
-                     })
-    
-                 document.querySelector(".closeEdit").addEventListener("click",function(){
-                    document.querySelector(".popupEdit").style.display = "none";
-    
-                    })
-            </script>
+                EditCaption.textContent = btnEditImage.files[0].name;
+            } 
+
+
+             document.getElementById("editImage").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+            document.getElementById("editImage1").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+
+                document.getElementById("editImage2").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+
+                document.getElementById("editImage3").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage4").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage5").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage6").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage7").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage8").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage9").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+                document.getElementById("editImage10").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "flex";
+                 })
+
+             document.querySelector(".closeEdit").addEventListener("click",function(){
+                document.querySelector(".popupEdit").style.display = "none";
+
+                })
+
+                
+        </script>
+
         </div>
     <!--EDIT IMAGE END-->  
             
@@ -650,7 +654,7 @@
     <!--OTHER SCRIPT FUNCTIONS-->
     <script type="text/javascript">
         let portrait= document.getElementById('portraitImage');
-        let images = ["../../images/s1.png","../../images/s2.png"]
+        let images = ["../../../../images/s1.png","../../../../images/s2.png"]
         setInterval(function(){
             let random = Math.floor(Math.random() * 2);
             portraitImage.src = images[random];
@@ -661,7 +665,7 @@
     <!--SCRIPT-->
     <script src="../javascript/app.js"></script>
     <script src="../javascript/script.js"></script>
-    <script src="../javascript/gallery.js"></script>
+    <script src="../javascript/scriptAdminGallery.js"></script>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
