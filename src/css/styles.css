@@ -1,5 +1,7 @@
 
 
+
+
 /*HOME CSS START*/
 .home .carousel-item{
 	min-height: 100vh;
@@ -26,6 +28,7 @@
 	transform: translate(-50%,-50%);
 	text-align: center;
 }
+
 
 
 .stream{ /*Stream now button*/
@@ -385,19 +388,20 @@ color: #030205;
   }
 }
 .preview-box{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  background: #fff;
-  max-width: 700px;
-  width: 100%;
-  z-index: 5;
-  opacity: 0;
-  pointer-events: none;
-  border-radius: 3px;
-  padding: 0 5px 5px 5px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.9);
+	background: #fff;
+	max-width: 700px;
+	width: 450px;
+	height: 450px;
+	z-index: 5;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 3px;
+	padding: 0 5px 5px 5px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
 .preview-box.show{
   opacity: 1;
@@ -414,11 +418,15 @@ color: #030205;
 .details .title{
   display: flex;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: 'Acme';
+  color: #5C2F96;
 }
 .details .title p{
   font-weight: 500;
   margin-left: 5px;
+  font-family: 'Acme';
+  color: #030205;
 }
 .details .icon{
   color: #007bff;
@@ -431,7 +439,9 @@ color: #030205;
 }
 .image-box img{
   width: 100%;
+  height: 350px;
   border-radius: 0 0 3px 3px;
+  object-fit: cover;
 }
 .shadow{
   position: fixed;
@@ -576,8 +586,8 @@ color: #030205;
 }
 
 .popup-contentMobile{
-	height: 480px;
-	width: 500px;
+	height: 390px;
+	width: 460px;
 	background-color: white;
 	padding: 20px;
 	border-radius: 5px;
@@ -666,7 +676,7 @@ color: #030205;
 	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 }
 
 .popup-contentGh{
@@ -695,7 +705,7 @@ color: #030205;
 	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 }
 
 .popup-contentGa{
@@ -724,7 +734,7 @@ color: #030205;
 	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 }
 
 .popup-contentDel{
@@ -752,7 +762,7 @@ color: #030205;
 	height: 96px;
 	width: 50px;
 	opacity: .7;
-	z-index: 0;
+	z-index: 1;
 
 	
 }
@@ -767,7 +777,7 @@ color: #030205;
 	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 }
 
 .popup-contentEdit{
@@ -784,10 +794,6 @@ color: #030205;
 	top: 8px;
 	right: 8px;
 
-}
-
-.gallery iconify-icon{
-	vertical-align: middle;
 }
 
 
@@ -813,6 +819,7 @@ color: #030205;
 	width: 100%;
 	vertical-align: middle;
 	transition: all 0.3s ease;
+	z-index: 0;
   }
 
   .galleryAdmin .imageAdmin.hide{
@@ -848,7 +855,6 @@ color: #030205;
 	  width: 100%;
 	}
   }
-
 
 /* PRELOADER */
 .dot-flashing {
