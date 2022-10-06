@@ -187,7 +187,7 @@
             
               <div class="r1"></div>  
               <div class="r2" style="background: #C58181;"></div>
-              <a class="socialLink" id="socialLink"><iconify-icon icon="ic:baseline-change-circle"  style="color: rgb(0, 0, 0);" width="50" height="55"></iconify-icon></a>
+              <a class="socialLink" id="socialLink"><iconify-icon icon="ic:baseline-change-circle"  style="color: rgb(0, 0, 0);" onMouseOver="this.style.color='blue'" onMouseOut="this.style.color='black'" width="50" height="55"></iconify-icon></a>
               <a class="iconInsta" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
               <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
               <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>    
@@ -328,8 +328,10 @@
                 <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
                 <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>
                 <div class="stream">
-                    <a id="sp"><iconify-icon icon="ic:baseline-change-circle" width="50" height="55"></iconify-icon></a>
-                 <a  href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1"  style="color:  rgba(27, 255, 6, 0.72)">SPOTIFY</a>
+                    <a id="sp" class="flex items-center">
+                        <iconify-icon icon="ic:baseline-change-circle" width="50" height="55"></iconify-icon>
+                    </a>
+                    <a  href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1"  style="color:  rgba(27, 255, 6, 0.72)">SPOTIFY</a>
                 </div>
     
     <!--SPOTIFY LINK START-->
@@ -369,7 +371,8 @@
                 <br><br><br><br>
                 <div class="latest"><center>HER LATEST</center>  </div>
                 <h1><center>PALMS OF TWO SINNERS</center></h1>
-                <center>
+
+                <div class="flex justify-center gap-4">
                     <a class="drop-shadow-md mt-3 ml-2" href="https://open.spotify.com/track/4Mds7U2A1GfE0sggdoVyHt?autoplay=true"> <iconify-icon icon="logos:spotify-icon" style="color: white;" width="70" height="70"></iconify-icon></a>    
                     
                     <a class="drop-shadow-md mt-3 ml-2" href="https://music.youtube.com/watch?v=bE73tKRujhw"><iconify-icon icon="akar-icons:youtube-fill" style="color: red;" width="70" height="70"></iconify-icon></iconify-icon></a>    
@@ -377,7 +380,8 @@
                     <a class="drop-shadow-md mt-3 ml-2" href="https://music.apple.com/ph/album/palms-of-two-sinners/1616108872?i=1616108874"> <iconify-icon icon="cib:apple-music" style="color: red;" width="70" height="70"></iconify-icon></a>    
                     
                     <a class="drop-shadow-md mt-3 ml-2" href="https://www.deezer.com/us/track/1697520837?autoplay=true"><iconify-icon icon="arcticons:deezer-audiobooks" style="color: red;" width="70" height="70"></iconify-icon></a>    
-                </center>
+                </div>
+                    
                 <div class="video"> <center>
                     <iframe width="80%" height="350" src="https://www.youtube-nocookie.com/embed/VRlB4jibwNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br><br>
                     <iframe width="80%"  style="border-radius:12px" src="https://open.spotify.com/embed/track/4Mds7U2A1GfE0sggdoVyHt?utm_source=generator" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
