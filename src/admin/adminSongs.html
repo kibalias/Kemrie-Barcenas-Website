@@ -156,9 +156,9 @@
             <!--Add-Song Modal-->
             <div v-show="showModal" class="fixed bg-white p-5 px-10 z-40  grid grid-cols-1 justify-items-center md:w-[560px] h-82 shadow-lg shadow-gray-800 rounded-xl md:top-1/4 left-[80px] right-[80px] md:right-1/4 md:left-1/4 md:ml-16">
                 <button @click="toggleShowModal" class="absolute right-[20px] top-[10px]">
-                    <iconify-icon icon="carbon:close-filled" style="color: #ebe3ea;" width="25"></iconify-icon>
+                    <iconify-icon icon="carbon:close-filled" style="color: #ebe3ea;" width="25" onMouseOver="this.style.color='#5b5b5b'" onMouseOut="this.style.color='#ebe3ea'"></iconify-icon>
                 </button>
-
+                
                 <div class="text-3xl font-oswald tracking-wider text-red-900 mt-2">
                     ADD A SONG
                 </div>
@@ -175,14 +175,14 @@
 
                     <div class="md:ml-5 md:w-1/2">
                         <div class="mb-5">
-                            <input type="text" placeholder="SONG TITLE" class="w-full border-solid border-0 border-b border-darkviolet-100 mb-3">
-                            <input type="text" placeholder="SONG LINK" class="w-full border-solid border-0 border-b border-darkviolet-100">
+                            <input type="text" placeholder="SONG TITLE" class="w-full border-solid border-0 border-b border-darkviolet-100 mb-3" required>
+                            <input type="text" placeholder="SONG LINK" class="w-full border-solid border-0 border-b border-darkviolet-100" required>
                         </div>
                         <div class="md:mb-10">
 
                         </div>
                         <div class="flex text-xl font-oswald justify-center items-end mt-2">
-                            <button @click="toggleShowModal" class="bg-gray-100 rounded-xl w-40 p-[5px] hover:bg-red-900 hover:text-white drop-shadow-md">ADD SONG</button>
+                            <button id="addSongBtn" @click="toggleShowModal" class="bg-gray-100 rounded-xl w-40 p-[5px] hover:bg-red-900 hover:text-white drop-shadow-md">ADD SONG</button>
                         </div>
                     </div>
                 </div>
