@@ -13,3 +13,10 @@ albumUploadBtn.addEventListener('change', (e) =>{
           
     }
 });
+
+//On click of "Add Song button", there will be a prompt that they successfully added a song
+let addSongBtn = document.getElementById('addSongBtn');
+
+addSongBtn.addEventListener('click', () => {
+    alert("Song has been added successfully!");
+})

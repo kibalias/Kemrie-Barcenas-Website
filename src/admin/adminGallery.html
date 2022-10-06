@@ -229,14 +229,10 @@
 </div>
 <!--CHANGE Header END-->  
 
-        
-
-
-<div class="gallery">
-       
+<div class="gallery"> 
         
     <div class="wrapper">
-            <center><button id="addImage" class="text-2xl bg-indigo-50 hover:bg-indigo-200 w-48 h-12 rounded-full font-acme py-2 px-4 rounded inline-flex items-center">
+            <center><button id="addImage" class="text-2xl bg-indigo-50 hover:bg-indigo-200 w-48 h-12 py-2 px-4 rounded-2xl uppercase tracking-wider flex justify-center gap-2 items-center font-oswald">
                 <iconify-icon inline icon="bxs:image-add" width="37" height="37"></iconify-icon> Add Image</button></center><br><br>
     <!--ADD IMAGE START-->
         <div class="popupGa">
@@ -294,7 +290,6 @@
 
         </div>
     <!--ADD IMAGE END-->  
-
 
             <!-- filter Items -->
             <nav>
@@ -659,7 +654,7 @@
     <!--OTHER SCRIPT FUNCTIONS-->
     <script type="text/javascript">
         let portrait= document.getElementById('portraitImage');
-        let images = ["../../../../images/s1.png","../../../../images/s2.png"]
+        let images = ["../../images/s1.png","../../images/s2.png"]
         setInterval(function(){
             let random = Math.floor(Math.random() * 2);
             portraitImage.src = images[random];
