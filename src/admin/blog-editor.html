@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/KB.png" type="image/icon type">
     <link rel="stylesheet" href="../../public/main.css">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -57,7 +58,7 @@
         </div>
     </div>
     <!--EDITOR-->
-    <div class="hidden md:block mx-4 md:mx-24 bg-white h-screen">
+    <div class="hidden md:block mx-4 md:mx-24 bg-white h-auto">
         <!--Tools and Input Area-->
         <div class="bg-gray-100 drop-shadow-md">
             <!--Tools-->
@@ -145,30 +146,17 @@
 
             </div>
         </div>
-
-        <div class="mt h-auto bg-white">
+    </div>
+    
+    <div class="text-area h-auto bg-white block mx-4 md:mx-24">
             <!--Input Area-->
-            <div id="editor-area" contenteditable="true" class="px-20 py-5 w-full border-none outline-none">
-
+            <div id="editor-area" contenteditable="true" class="min-h-screen md:px-20 md:py-5 px-10 py-5 w-full border-none outline-none">
             </div>
         </div>
-    </div>
     <!--End of Editor-->
-
-    <div class="hidden mx-4 md:mx-24 bg-white h-screen">
-    <div id="editor"></div>
-
-    </div>
 
     <!--Insert Mobile Editor here-->
     <div>
-        <div class="text-area md:hidden mx-4 h-auto bg-white"">
-            <!--Input Area-->
-            <div id="editor-area" contenteditable="true" class="bg-white min-h-screen px-10 py-5 w-full border-none outline-none">
-
-            </div>
-        </div>
-        
             <!--Hidden tools-->
             <div class="hidden-tools hidden md:hidden fixed bottom-[60px] right-0 left-0 h-12 px-10">
                 <div class="hidden-tools bg-darkviolet-100 flex justify-center rounded-lg p-2 gap-1">
