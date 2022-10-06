@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/KB.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Admin - Home</title>
+</head>
+<body>
+    <div class="z-50 admin-indicator hidden shadow-md shadow-gray-600 fixed bottom-0 right-0 h-40 w-12 bg-white rounded-l-2xl mb-32 md:flex justify-center items-center text-2xl tracking-widest font-oswald">
+        <div class="text-darkviolet-200 rotate-[270deg]">
+            ADMIN
+        </div>
+    </div>
+
+    <!--NAVBAR-->
+    <div id="app" >
+        <div>
+        <nav class="absolute p-0 bg-transparent w-full md:flex md:items-center md:justify-between z-30">
+              <div class="flex justify-between items-center">
+  
+                  <div class="z-20 block md:hidden"></div>
+  
+                  <span class="ml-5 font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
+                      KB
+                  </span>
+                  <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                      <button @click="toggleShowSidebar">
+                          <iconify-icon icon="bx:menu" style="color: white;" width="40"></iconify-icon>
+                      </button>
+                  </span>
+              </div>
+          <div>
+              <div class="hidden md:block">
+                  <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
+                              w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+                      <li class="mx-5  my-0 md:my-0 tracking-widest">
+                          <a href="adminHome.html" class="
+                          inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">HOME</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="adminSongs.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">SONGS</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="adminGallery.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">GALLERY</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="adminBlogs.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">BLOGS</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <!--Mobile Menu-->
+          <div v-show="showSidebar" class=" w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
+              <!--Links-->
+              <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
+                <li class="my-2">
+                      <a href="adminHome.html" class="">Home</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="adminSongs.html">Songs</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="adminGallery.html">Gallery</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="adminBlogs.html">Blogs</a>
+                  </li>
+              </ul>
+  
+              <!--Close Button-->
+              <button @click="toggleShowSidebar" class="p-5">
+                  <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
+              </button>
+              
+              <div class=""><center>
+                <a  href="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" ><iconify-icon icon="jam:youtube-circle" width="55" height="55"></iconify-icon></a>
+                <a href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1" ><iconify-icon icon="bi:spotify" width="50" height="50"></iconify-icon></a>        
+                <a class="" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="50" height="50"></iconify-icon></a>
+                <a class="" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="52" height="52"></iconify-icon></a>
+                <a class="" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="50" height="50"></iconify-icon></a>
+                
+            </center></div>
+          </div>
+        </nav>
+        </div>
+    </div>
+    <!--END OF NAVBAR-->
+    
+    <section class="home">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        
+        <div class="carousel-controls">
+           
+            <ol class="carousel-indicators ">
+                <li data-target="#carousel" data-slide-to="0" class="active" style="background-image:url('../../images/bg1.jpg')"></li>
+                <li data-target="#carousel" data-slide-to="1" style="background-image:url('../../images/bg2.jpg')"></li>
+            </ol>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <img src="../../images/left-arrow.svg" alt="Prev"> 
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <img src="../../images/right-arrow.svg" alt="Next">
+            </a>
+           
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image:url('../../images/bgp1.jpg'); opacity: .9;">
+            
+        <button id="mobile-settings"><iconify-icon icon="ci:settings-filled" width="60" height="60"></iconify-icon></button>
+        <h2 class="font-permanentMarker py-16">KEMRIE</h2>
+          <div class="container">
+            
+              <div class="r1"></div>  
+              <div class="r2" style="background: #C58181;"></div>
+              <a class="socialLink" id="socialLink"><iconify-icon icon="ic:baseline-change-circle"  style="color: rgb(0, 0, 0);" width="50" height="55"></iconify-icon></a>
+              <a class="iconInsta" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
+              <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
+              <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>    
+               <div class="stream"> 
+                <a id="yt" class="flex items-center"><iconify-icon icon="ic:baseline-change-circle" width="50" height="55"></iconify-icon></a>
+                <a class="" href="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" style="color:  rgba(255, 99, 71, 0.72);">YOUTUBE</a>
+               </div>
+               
+    <!--SOCIAL LINK START-->
+    <div class="popupSM">
+        <div class="popup-contentSM">
+            <button class="closeSM"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+            <h1 class="font-acme text-2xl">UPDATE SOCIAL MEDIA LINKS</h1>
+            <h5 class=" mt-3 text-fuchsia-800"><b>INSTAGRAM</b></h5>
+            <input  class="w-4/5 mt-1.5" type="text" value="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" >
+            <h5 class=" mt-3 text-sky-500"><b>TWITTER</b></h5>
+            <input  class="w-4/5 mt-1.5 " type="text" value="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ">
+            <h5 class=" mt-3 text-cyan-500"><b>FACEBOOK</b></h5>
+            <input  class="w-4/5 mt-1.5" type="text" value="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" >
+            
+            <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+        </div>
+        <script>
+            document.getElementById("socialLink").addEventListener("click",function(){
+                document.querySelector(".popupSM").style.display = "flex";
+            })
+    
+            document.querySelector(".closeSM").addEventListener("click",function(){
+                document.querySelector(".popupSM").style.display = "none";
+    
+            })
+        </script>
+    
+    </div>
+    <!--SOCIAL LINK END-->
+    <!--YOUTUBE LINK START-->
+            <div class="popupYt">
+                <div class="popup-contentYt">
+                    <button class="closeYt"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+                    <h1 class="font-acme text-2xl">UPDATE YOUTUBE LINK</h1>
+                    <input  class="w-4/5 mt-3" type="text" placeholder="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" readonly>
+                    <input class="w-4/5 mt-3"type="text" placeholder="New Link">
+                    <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+                </div>
+                <script>
+                    document.getElementById("yt").addEventListener("click",function(){
+                        document.querySelector(".popupYt").style.display = "flex";
+                    })
+    
+                    document.querySelector(".closeYt").addEventListener("click",function(){
+                        document.querySelector(".popupYt").style.display = "none";
+    
+                    })
+                </script>
+            
+            </div>
+    <!--YOUTUBE LINK END-->
+    <!--MOBILE SETTINGS START-->
+    <div class="popupMobile ">
+        <div class="popup-contentMobile">
+            <button class="closeMobile"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+            <h1 class="font-permanentMarker text-fuchsia-800 text-xl ">GENERAL HEADER SETTINGS</h1>
+            <div class="flex flex-row">
+                <div class=" ml-3.5 mt-4 w-2/5"><center>
+                    <h5 class=" mt-3 text-sm font-acme text-fuchsia-800"><b>BACKGROUND IMAGES:</b></h5>
+                    <div class=" mt-2 w-30 h-24 bg-zinc-500">
+                        <input type="file" id="BtnCarouselImg1" style="display:none" class=" text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl" accept="image/*">   
+                        <label for="BtnCarouselImg1" class="absolute mt-4" style="margin-left: -19px;"><iconify-icon icon="akar-icons:camera" width="40" height="40"></iconify-icon></label> 
+                        <img class="w-30 h-24 object-cover" id="CarouselImg1Preview" >
+                    </div> 
+                    <div class=" mt-2 w-30 h-24 bg-zinc-500">
+                        <input type="file" id="BtnCarouselImg2" style="display:none" class=" text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl" accept="image/*">   
+                        <label for="BtnCarouselImg2" class="absolute mt-4" style="margin-left: -19px;"><iconify-icon icon="akar-icons:camera" width="40" height="40"></iconify-icon></label> 
+                        <img class="w-30 h-24 object-cover" id="CarouselImg2Preview" >
+                    </div> </center>
+                </div>
+                <div class="bg-slate-300 font-acme rounded-sm ml-3.5 mt-4 p-0 w-2/4">
+                    <label class=" h-7 text-sm mt-3 text-fuchsia-800"><b>SOCIAL MEDIA LINK:</b></label>
+                    <input  class=" h-7 text-sm  font-acme text-fuchsia-800" type="text" placeholder="INSTAGRAM" >
+                    <input  class=" h-7 text-sm mt-1.5 font-acme text-fuchsia-800" type="text" placeholder="TWITTER" >
+                    <input  class=" h-7 text-sm mt-1.5 font-acme text-fuchsia-800" type="text" placeholder="FACEBOOK" >
+                    <input  class=" h-7 text-sm mt-1.5 font-acme text-fuchsia-800" type="text" placeholder="YOUTUBE" >
+                    <input  class=" h-7 text-sm mt-1.5 mb-3 font-acme text-fuchsia-800" type="text" placeholder="SPOTIFY" >
+                </div>
+    
+            </div>
+           
+            
+            
+            
+            <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+        </div>
+        <script>
+                let BtnCarouselImg1 = document.getElementById("BtnCarouselImg1");
+                let CarouselImg1Preview = document.getElementById("CarouselImg1Preview");
+                
+                BtnCarouselImg1.onchange = () => {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(BtnCarouselImg1.files[0]);
+                    console.log(BtnCarouselImg1.files[0]);
+                    reader.onload = () => {
+                        CarouselImg1Preview.setAttribute("src", reader.result);
+                    } 
+                } 
+    
+                let BtnCarouselImg2 = document.getElementById("BtnCarouselImg2");
+                let CarouselImg2Preview = document.getElementById("CarouselImg2Preview");
+                
+                BtnCarouselImg2.onchange = () => {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(BtnCarouselImg2.files[0]);
+                    console.log(BtnCarouselImg2.files[0]);
+                    reader.onload = () => {
+                        CarouselImg2Preview.setAttribute("src", reader.result);
+                    } 
+                } 
+            document.getElementById("mobile-settings").addEventListener("click",function(){
+                document.querySelector(".popupMobile").style.display = "flex";
+            })
+    
+            document.querySelector(".closeMobile").addEventListener("click",function(){
+                document.querySelector(".popupMobile").style.display = "none";
+            })
+        </script>
+    
+    </div>
+    <!--MOBILE SETTINGS LINK END-->
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image:url('../../images/bgp2.jpg'); opacity: .9">
+
+        <h2 class="font-permanentMarker py-16">BARCENAS</h2>
+            <div class="container">
+                <div class="r1"></div>       
+                <div class="r2" style="background: rgba(13, 167, 2, 0.72)"></div> 
+                <a class="iconInsta" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
+                <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
+                <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>
+                <div class="stream">
+                    <a id="sp"><iconify-icon icon="ic:baseline-change-circle" width="50" height="55"></iconify-icon></a>
+                 <a  href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1"  style="color:  rgba(27, 255, 6, 0.72)">SPOTIFY</a>
+                </div>
+    
+    <!--SPOTIFY LINK START-->
+            <div class="popupSp">
+                <div class="popup-contentSp">
+                    <button class="closeSp"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+                    <h1 class="font-acme text-2xl">UPDATE SPOTIFY LINK</h1>
+                    <input  class="w-4/5 mt-3" type="text" placeholder="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1" readonly>
+                    <input class="w-4/5 mt-3"type="text" placeholder="New Link">
+                    <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+                </div>
+                <script>
+                    document.getElementById("sp").addEventListener("click",function(){
+                        document.querySelector(".popupSp").style.display = "flex";
+                    })
+    
+                    document.querySelector(".closeSp").addEventListener("click",function(){
+                        document.querySelector(".popupSp").style.display = "none";
+    
+                    })
+                </script>
+            
+            </div>
+    <!--SPOTIFY LINK END-->
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    </section>
+    
+     <!----About section start---->
+    <div class="about">
+    
+    
+                <button id="btnLatest" class="float-right w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl">EDIT DETAILS</button>    
+                <br><br><br><br>
+                <div class="latest"><center>HER LATEST</center>  </div>
+                <h1><center>PALMS OF TWO SINNERS</center></h1>
+                <center>
+                    <a class="drop-shadow-md mt-3 ml-2" href="https://open.spotify.com/track/4Mds7U2A1GfE0sggdoVyHt?autoplay=true"> <iconify-icon icon="logos:spotify-icon" style="color: white;" width="70" height="70"></iconify-icon></a>    
+                    
+                    <a class="drop-shadow-md mt-3 ml-2" href="https://music.youtube.com/watch?v=bE73tKRujhw"><iconify-icon icon="akar-icons:youtube-fill" style="color: red;" width="70" height="70"></iconify-icon></iconify-icon></a>    
+                    
+                    <a class="drop-shadow-md mt-3 ml-2" href="https://music.apple.com/ph/album/palms-of-two-sinners/1616108872?i=1616108874"> <iconify-icon icon="cib:apple-music" style="color: red;" width="70" height="70"></iconify-icon></a>    
+                    
+                    <a class="drop-shadow-md mt-3 ml-2" href="https://www.deezer.com/us/track/1697520837?autoplay=true"><iconify-icon icon="arcticons:deezer-audiobooks" style="color: red;" width="70" height="70"></iconify-icon></a>    
+                </center>
+                <div class="video"> <center>
+                    <iframe width="80%" height="350" src="https://www.youtube-nocookie.com/embed/VRlB4jibwNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br><br>
+                    <iframe width="80%"  style="border-radius:12px" src="https://open.spotify.com/embed/track/4Mds7U2A1GfE0sggdoVyHt?utm_source=generator" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </center>
+                </div>
+      
+    </div>
+     <!--ABOUT EDIT START-->
+     <div class="popupAbout">
+        <div class="popup-contentAbout"><center>
+            <button class="closeAbout"><iconify-icon icon="ant-design:close-circle-filled" width="40" height="40"></iconify-icon></button>
+            <h1 class="font-acme text-2xl">UPDATE LATEST SONG</h1>
+            <input  class="w-4/5 mt-3" type="text" placeholder="SONG NAME"><br>
+            <label class=" mt-3 text-fuchsia-800"><b>LINKS</b></label><br>
+            <input class="w-4/5 mt-3"type="text" placeholder="SPOTIFY">
+            <input class="w-4/5 mt-3"type="text" placeholder="YOUTUBE">
+            <input class="w-4/5 mt-3"type="text" placeholder="APPLE MUSIC">
+            <input class="w-4/5 mt-3"type="text" placeholder="BEEZER">
+            <button class="w-48 h-9 mt-3 text-xl text-white font-acme bg-slate-600 hover:bg-slate-900 rounded-xl"> UPDATE </button>       
+        </center>
+        </div>
+        <script>
+            document.getElementById("btnLatest").addEventListener("click",function(){
+                document.querySelector(".popupAbout").style.display = "flex";
+            })
+    
+            document.querySelector(".closeAbout").addEventListener("click",function(){
+                document.querySelector(".popupAbout").style.display = "none";
+    
+            })
+        </script>
+    
+    </div>
+    <!--ABOUT EDIT END-->
+
+    <!--JAVASCRIPT FILES-->
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/app.js"></script>
+</body>
+</html>
