@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/main.css">
-    <link rel="stylesheet" href="src/css/styles.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>KB - Home</title>
+  <title>Kemrie Barcenas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/KB.png" type="image/icon type">
+  <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="src/css/styles.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
-<body class="bg-purple-700">
+<body>
     <!--PRELOADER-->
     <div id="wrapper" class="md:hidden block fixed grid place-content-center bg-[url('images/bg-gradient.png')] object-fill h-full w-full top-0 left-0 right-0 bottom-0 z-40">
         <h1 class="z-40 tracking-widest text-3xl md:text-5xl text-white text-center font-bold font-permanentMarker ">
@@ -24,162 +26,249 @@
     </div>
     <!--END OF PRELOADER-->
 
-<!--NAVBAR-->
-    <div id="app">
-        <nav class="p-5 bg-transparent w-full md:flex md:items-center md:justify-between">
-            <div class="flex justify-between items-center">
-                <span class="font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
-                    KB
-                </span>
-                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-                    <button @click="toggleShowSidebar">
-                        <iconify-icon icon="bx:menu" style="color: white;"></iconify-icon>
-                    </button>
-                </span>
-            </div>
+    <!--NAVBAR-->
+    <div id="app" >
+        <div class="">
+        <nav class="absolute z-20 p-0 bg-transparent w-full md:flex md:items-center md:justify-between ">
+              <div class="flex justify-between items-center">
+  
+                  <div class="z-20 block md:hidden"></div>
+  
+                  <span class="ml-5 font-permanentMarker tracking-widest text-4xl text-white font-bold cursor-pointer">
+                      KB
+                  </span>
+                  <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                      <button @click="toggleShowSidebar">
+                          <iconify-icon icon="bx:menu" style="color: white;" width="40"></iconify-icon>
+                      </button>
+                  </span>
+              </div>
+          <div>
+              <div class="hidden md:block">
+                  <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
+                              w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+                      <li class="mx-5  my-0 md:my-0 tracking-widest">
+                          <a href="index.html" class="
+                          inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">HOME</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="src/songs.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">SONGS</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="src/gallery.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">GALLERY</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="src/blogs.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">BLOGS</a>
+                      </li>
+                      <li class="mx-5 my-0 md:my-0 tracking-widest">
+                          <a href="src/contact.html" class="inline-block
+                          relative
+                          cursor-pointer
+                          transition-all
+                          duration-500
+                          before:absolute
+                          before:-bottom-2
+                          before:left-1/2
+                          before:-translate-x-1/2
+                          before:w-0
+                          before:h-0.5
+                          before:rounded-full
+                          before:opacity-0
+                          before:transition-all
+                          before:duration-500
+                          before:bg-white
+                          hover:before:w-full
+                          hover:before:opacity-100">CONTACT</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <!--Mobile Menu-->
+          <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
+              <!--Links-->
+              <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
+                  
 
-            <div>
-                <div class="hidden md:block">
-                    <ul class="text-white font-acme text-2xl flex md:items-center md:z-auto
-                                w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
-                        <li class="mx-5 mt-2 my-5 md:my-0 tracking-widest">
-                            <a href="index.html" class="
-                            inline-block
-                            relative
-                            cursor-pointer
-                            transition-all
-                            duration-500
-                            before:absolute
-                            before:-bottom-2
-                            before:left-1/2
-                            before:-translate-x-1/2
-                            before:w-0
-                            before:h-0.5
-                            before:rounded-full
-                            before:opacity-0
-                            before:transition-all
-                            before:duration-500
-                            before:bg-white
-                            hover:before:w-full
-                            hover:before:opacity-100">HOME</a>
-                        </li>
-                        <li class="mx-5 my-5 md:my-0 tracking-widest">
-                            <a href="src/songs.html" class="inline-block
-                            relative
-                            cursor-pointer
-                            transition-all
-                            duration-500
-                            before:absolute
-                            before:-bottom-2
-                            before:left-1/2
-                            before:-translate-x-1/2
-                            before:w-0
-                            before:h-0.5
-                            before:rounded-full
-                            before:opacity-0
-                            before:transition-all
-                            before:duration-500
-                            before:bg-white
-                            hover:before:w-full
-                            hover:before:opacity-100">SONGS</a>
-                        </li>
-                        <li class="mx-5 my-5 md:my-0 tracking-widest">
-                            <a href="#" class="inline-block
-                            relative
-                            cursor-pointer
-                            transition-all
-                            duration-500
-                            before:absolute
-                            before:-bottom-2
-                            before:left-1/2
-                            before:-translate-x-1/2
-                            before:w-0
-                            before:h-0.5
-                            before:rounded-full
-                            before:opacity-0
-                            before:transition-all
-                            before:duration-500
-                            before:bg-white
-                            hover:before:w-full
-                            hover:before:opacity-100">GALLERY</a>
-                        </li>
-                        <li class="mx-5 my-5 md:my-0 tracking-widest">
-                            <a href="src/blogs.html" class="inline-block
-                            relative
-                            cursor-pointer
-                            transition-all
-                            duration-500
-                            before:absolute
-                            before:-bottom-2
-                            before:left-1/2
-                            before:-translate-x-1/2
-                            before:w-0
-                            before:h-0.5
-                            before:rounded-full
-                            before:opacity-0
-                            before:transition-all
-                            before:duration-500
-                            before:bg-white
-                            hover:before:w-full
-                            hover:before:opacity-100">BLOGS</a>
-                        </li>
-                        <li class="mx-5 my-5 md:my-0 tracking-widest">
-                            <a href="#" class="inline-block
-                            relative
-                            cursor-pointer
-                            transition-all
-                            duration-500
-                            before:absolute
-                            before:-bottom-2
-                            before:left-1/2
-                            before:-translate-x-1/2
-                            before:w-0
-                            before:h-0.5
-                            before:rounded-full
-                            before:opacity-0
-                            before:transition-all
-                            before:duration-500
-                            before:bg-white
-                            hover:before:w-full
-                            hover:before:opacity-100">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--Mobile Menu-->
-            <div v-show="showSidebar" class="w-3/5 fixed top-0 right-0 bottom-0 bg-gray-300 z-30 block md:hidden mobile-menu">
-                <!--Links-->
-                <ul class="absolute inset-y-1/4 inset-x-1/3 py-8 text-center tracking-wider font-oswald text-gray-700 text-2xl uppercase ">
-                    <li class="my-2">
-                        <a href="index.html" class="">Home</a>
-                    </li>
-                    <li class="my-2">
-                        <a href="src/songs.html">Songs</a>
-                    </li>
-                    <li class="my-2">
-                        <a href="#">Gallery</a>
-                    </li>
-                    <li class="my-2">
-                        <a href="src/blogs.html">Blogs</a>
-                    </li>
-                    <li class="my-2">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-
-                <!--Close Button-->
-                <button @click="toggleShowSidebar" class="p-5">
-                    <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
-                </button>
-            </div>
+                <li class="my-2">
+                      <a href="home.html" class="">Home</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="src/songs.html">Songs</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="src/gallery.html">Gallery</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="src/blogs.html">Blogs</a>
+                  </li>
+                  <li class="my-2">
+                      <a href="src/contact.html">Contact</a>
+                  </li>
+                  <li>
+                    <a class="" href="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" style="color:  rgba(255, 99, 71, 0.72);"><iconify-icon icon="jam:youtube-circle" style="color:  rgba(255, 99, 71, 0.72);" width="70" height="70"></iconify-icon></a>
+                    <a class="" href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1"  style="color:  rgba(27, 255, 6, 0.72)"><iconify-icon icon="logos:spotify-icon" width="60" height="60"></iconify-icon></a>
+                </li>
+                  
+              </ul>
+  
+              <!--Close Button-->
+              <button @click="toggleShowSidebar" class="p-5">
+                  <iconify-icon icon="codicon:chrome-close" width="30"></iconify-icon>
+              </button>
+              <div class=""><center>
+                <a class="" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
+                <a class="" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
+                <a class="" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>
+            </center></div>
+          </div>
         </nav>
+        </div>
     </div>
     <!--END OF NAVBAR-->
+
+<section class="home">
+<div id="carousel" class="carousel slide" data-ride="carousel">
     
-    <!--Full Content-->
-    <h1 class="text-3xl text-white text-center font-bold underline">
-        Hello, World!
-    </h1>
+    
+    <div class="carousel-controls">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active" style="background-image:url('images/bg1.jpg')"></li>
+            <li data-target="#carousel" data-slide-to="1" style="background-image:url('images/bg2.jpg')"></li>
+        </ol>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <img src="images/left-arrow.svg" alt="Prev"> 
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <img src="images/right-arrow.svg" alt="Next">
+        </a>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image:url('images/bgp1.jpg'); opacity: .9;">
+        
+    
+    <h2 class="font-permanentMarker py-16">KEMRIE</h2>
+      <div class="container">
+        
+          <div class="r1"></div>  
+          <div class="r2" style="background: #C58181;"></div>
+          <a class="iconInsta" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
+          <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
+          <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>
+          <a class="iconBell" href=""><iconify-icon icon="bi:bell-fill" width="50" height="50"></iconify-icon></a>    
+            <a class="stream" href="https://www.youtube.com/channel/UCWMKgCmKjE50ODdp-wYuEiQ" style="color:  rgba(255, 99, 71, 0.72);"><iconify-icon icon="jam:youtube-circle" style="color:  rgba(255, 99, 71, 0.72);" width="40" height="40"></iconify-icon>Y O U T U B E</a>
+ 
+      </div>
+    </div>
+
+    <div class="carousel-item" style="background-image:url('images/bgp2.jpg'); opacity: .9">
+
+    <h2 class="font-permanentMarker py-16">BARCENAS</h2>
+        <div class="container">
+            <div class="r1"></div>       
+            <div class="r2" style="background: rgba(13, 167, 2, 0.72)"></div> 
+            <a class="iconInsta" href="https://www.instagram.com/kemrieb/?hl=en"><iconify-icon icon="entypo-social:instagram-with-circle" width="60" height="60"></iconify-icon></a>
+            <a class="iconTwit" href="https://twitter.com/kemrieb"><iconify-icon icon="entypo-social:twitter-with-circle" width="62" height="62"></iconify-icon></a>
+            <a class="iconFb" href="https://www.facebook.com/kemriepatricia"><iconify-icon icon="cib:facebook" width="60" height="60"></iconify-icon></a>
+            <a class="iconBell" href=""><iconify-icon icon="bi:bell-fill" width="50" height="50"></iconify-icon></a>    
+            <a class="stream" href="https://open.spotify.com/artist/5ZAXoEmG8XufgQpkWbHbSp?si=wa9pcCufSiesWLHv_hWkGw&nd=1"  style="color:  rgba(27, 255, 6, 0.72)"><iconify-icon icon="arcticons:spotify" style="color:  rgba(27, 255, 6, 0.72)" width="40" height="40"></iconify-icon>S P O T I F Y</a>
+                
+        </div>
+    </div>
+    
+    </div>
+</div>
+</section>
+
+ <!----About section start---->
+    <div class="about">
+            <div class="latest flex justify-center">
+                HER LATEST 
+            </div>
+            <h1 class="text-center">PALMS OF TWO SINNERS</h1>
+            <div class="flex justify-center gap-4">
+                <a class=" mt-3 ml-2 drop-shadow-lg" href="https://open.spotify.com/track/4Mds7U2A1GfE0sggdoVyHt?autoplay=true"> <iconify-icon icon="logos:spotify-icon" style="color: white;" width="70" height="70"></iconify-icon></a>    
+                
+                <a class=" mt-3 ml-2 drop-shadow-lg" href="https://music.youtube.com/watch?v=bE73tKRujhw"><iconify-icon icon="akar-icons:youtube-fill" style="color: red;" width="70" height="70"></iconify-icon></iconify-icon></a>    
+                
+                <a class=" mt-3 ml-2 drop-shadow-lg" href="https://music.apple.com/ph/album/palms-of-two-sinners/1616108872?i=1616108874"> <iconify-icon icon="cib:apple-music" style="color: red;" width="70" height="70"></iconify-icon></a>    
+                
+                <a class=" mt-3 ml-2 drop-shadow-lg" href="https://www.deezer.com/us/track/1697520837?autoplay=true"><iconify-icon icon="arcticons:deezer-audiobooks" style="color: red;" width="70" height="70"></iconify-icon></a>    
+            </div>
+                
+            <div class="video"> <center>
+                <iframe width="80%" height="350" src="https://www.youtube-nocookie.com/embed/VRlB4jibwNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br><br>
+                <iframe width="80%"  style="border-radius:12px" src="https://open.spotify.com/embed/track/4Mds7U2A1GfE0sggdoVyHt?utm_source=generator" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </center>
+            </div>
+    </div>
 
     <div class="invisible h-32">
 
@@ -190,22 +279,21 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-
-    <!--SCRIPT-->
-    <script src="src/javascript/app.js"></script>
+  
+ <!--JAVASCRIPT FILES-->
+    <script src="src/javascript/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <script>
-        var loader = document.getElementById("wrapper");
-        
-        window.addEventListener("load", function(){
-            loader.style.display = "none";
-        })
-    </script>
+    <script src="src/javascript/app.js"></script>
+
+     <!--SCRIPT for PRELOADER-->
+     <script>
+         var loader = document.getElementById("wrapper");
+         
+         window.addEventListener("load", function(){
+             loader.style.display = "none";
+         })
+     </script>
+
 </body>
 </html>
