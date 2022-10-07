@@ -177,7 +177,7 @@
 
     <!--Full Content-->
     <div class="mt-10 w-full">
-        <h1 class="tracking-widest text-3xl md:text-5xl text-white text-center font-bold font-permanentMarker ">
+        <h1 id="header-text" class="tracking-widest text-3xl md:text-5xl text-white text-center font-bold font-permanentMarker ">
             STREAM WITH ME
         </h1> 
         <div class="mx-24 my-5 md:my-10 grid grid-cols-1 md:grid-cols-3 gap-12"> <!--container for songs-->
@@ -256,6 +256,16 @@
         </div> 
     </div>
     <!--SCRIPT-->
+    <script type="text/javascript">
+        let text= document.getElementById('header-text');
+        let colors = ["white","#ae5a5a"]
+        setInterval(function(){
+            let random = Math.floor(Math.random() * 2);
+            text.style.color = colors[random];
+            console.log(random);
+        }, 700);
+    </script>
+
     <script src="javascript/app.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
