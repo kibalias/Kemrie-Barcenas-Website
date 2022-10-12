@@ -638,9 +638,9 @@ color: #030205;
 
 .popup-contentAbout{
 	height: 480px;
-	width: 500px;
+	width: 450px;
 	background-color: white;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 5px;
 	position: relative;
 
